@@ -29,6 +29,14 @@
 		2D82A54A2BDEA5A900807989 /* CharacterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82A5482BDEA5A900807989 /* CharacterListCell.swift */; };
 		2D82A54B2BDEA5A900807989 /* CharacterListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D82A5492BDEA5A900807989 /* CharacterListCell.xib */; };
 		2D82A54E2BDEA6DF00807989 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82A54D2BDEA6DF00807989 /* NSObject+Extension.swift */; };
+		2DD169BB2BDFE3540091D8EA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD169B92BDFE3540091D8EA /* RegisterViewController.swift */; };
+		2DD169BC2BDFE3540091D8EA /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD169BA2BDFE3540091D8EA /* RegisterViewController.xib */; };
+		2DD169C22BDFE48E0091D8EA /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD169BE2BDFE48E0091D8EA /* Lato-Regular.ttf */; };
+		2DD169C32BDFE48E0091D8EA /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD169BF2BDFE48E0091D8EA /* Inter-Medium.ttf */; };
+		2DD169C42BDFE48E0091D8EA /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD169C02BDFE48E0091D8EA /* Lato-Bold.ttf */; };
+		2DD169C52BDFE48E0091D8EA /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD169C12BDFE48E0091D8EA /* Lato-Medium.ttf */; };
+		2DD169C72BDFF74F0091D8EA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD169C62BDFF74F0091D8EA /* UIView+Extension.swift */; };
+		2DD169C92BDFFB560091D8EA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD169C82BDFFB560091D8EA /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +82,14 @@
 		2D82A5482BDEA5A900807989 /* CharacterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCell.swift; sourceTree = "<group>"; };
 		2D82A5492BDEA5A900807989 /* CharacterListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListCell.xib; sourceTree = "<group>"; };
 		2D82A54D2BDEA6DF00807989 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		2DD169B92BDFE3540091D8EA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2DD169BA2BDFE3540091D8EA /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		2DD169BE2BDFE48E0091D8EA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		2DD169BF2BDFE48E0091D8EA /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		2DD169C02BDFE48E0091D8EA /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		2DD169C12BDFE48E0091D8EA /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		2DD169C62BDFF74F0091D8EA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		2DD169C82BDFFB560091D8EA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +141,7 @@
 		2D4BFD3B2BD946AD007AFDB9 /* StarWarsCharacterExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				2DD169BD2BDFE47A0091D8EA /* Fonts */,
 				2D82A54C2BDEA6C300807989 /* Extensions */,
 				2D4BFD8D2BD96756007AFDB9 /* CoreData */,
 				2D4BFD862BD9506F007AFDB9 /* SWApiService */,
@@ -268,6 +285,8 @@
 		2D77837F2BDE0C6B00D432C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2DD169B92BDFE3540091D8EA /* RegisterViewController.swift */,
+				2DD169BA2BDFE3540091D8EA /* RegisterViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,8 +316,21 @@
 			isa = PBXGroup;
 			children = (
 				2D82A54D2BDEA6DF00807989 /* NSObject+Extension.swift */,
+				2DD169C62BDFF74F0091D8EA /* UIView+Extension.swift */,
+				2DD169C82BDFFB560091D8EA /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2DD169BD2BDFE47A0091D8EA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2DD169BF2BDFE48E0091D8EA /* Inter-Medium.ttf */,
+				2DD169C02BDFE48E0091D8EA /* Lato-Bold.ttf */,
+				2DD169C12BDFE48E0091D8EA /* Lato-Medium.ttf */,
+				2DD169BE2BDFE48E0091D8EA /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,9 +444,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D4BFD4C2BD946AF007AFDB9 /* LaunchScreen.storyboard in Resources */,
+				2DD169C22BDFE48E0091D8EA /* Lato-Regular.ttf in Resources */,
+				2DD169BC2BDFE3540091D8EA /* RegisterViewController.xib in Resources */,
 				2D4BFD492BD946AF007AFDB9 /* Assets.xcassets in Resources */,
+				2DD169C52BDFE48E0091D8EA /* Lato-Medium.ttf in Resources */,
+				2DD169C32BDFE48E0091D8EA /* Inter-Medium.ttf in Resources */,
 				2D4BFD442BD946AD007AFDB9 /* Main.storyboard in Resources */,
 				2D82A54B2BDEA5A900807989 /* CharacterListCell.xib in Resources */,
+				2DD169C42BDFE48E0091D8EA /* Lato-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,10 +478,13 @@
 			files = (
 				2D4BFD832BD94B9F007AFDB9 /* Endpoint.swift in Sources */,
 				2D4BFD882BD950B1007AFDB9 /* SWApiEndpoint.swift in Sources */,
+				2DD169C72BDFF74F0091D8EA /* UIView+Extension.swift in Sources */,
 				2D4BFD8A2BD96374007AFDB9 /* CharacterListService.swift in Sources */,
+				2DD169C92BDFFB560091D8EA /* UIViewController+Extension.swift in Sources */,
 				2D4BFD972BD969AF007AFDB9 /* CharacterInfo.swift in Sources */,
 				2D82A5472BDE9DA600807989 /* CharacterListViewModel.swift in Sources */,
 				2D4BFD412BD946AD007AFDB9 /* ViewController.swift in Sources */,
+				2DD169BB2BDFE3540091D8EA /* RegisterViewController.swift in Sources */,
 				2D4BFD852BD94C18007AFDB9 /* HTTPClient.swift in Sources */,
 				2D4BFD3D2BD946AD007AFDB9 /* AppDelegate.swift in Sources */,
 				2D4BFD812BD94B57007AFDB9 /* RequestError.swift in Sources */,

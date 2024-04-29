@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct CharacterList: Decodable, Hashable {
-    let nextPage: String?
-    let previousPage: String?
-    let list: [CharacterInfo]
+struct CharacterList: Codable, Hashable {
+    var nextPage: String?
+    var previousPage: String?
+    var list: [CharacterInfo]
     
     enum CodingKeys: String, CodingKey {
         case nextPage = "next"
@@ -29,21 +29,21 @@ struct CharacterList: Decodable, Hashable {
     }
 }
 
-struct CharacterInfo: Decodable, Hashable {
-    let name: String
-    let height: String
-    let mass: String
-    let hairColor: String
-    let skinColor: String
-    let eyeColor: String
-    let birthYear: String
-    let gender: String
-    let homeworld: String
-    let films: [String]
-    let species: [String]
-    let vehicles: [String]
-    let starships: [String]
-    let url: String
+struct CharacterInfo: Codable, Hashable {
+    var name: String
+    var height: String
+    var mass: String
+    var hairColor: String
+    var skinColor: String
+    var eyeColor: String
+    var birthYear: String
+    var gender: String
+    var homeworld: String
+    var films: [String]
+    var species: [String]
+    var vehicles: [String]
+    var starships: [String]
+    var url: String
     
     enum CodingKeys: String, CodingKey {
         case name = "name"

@@ -13,8 +13,8 @@ class CharacterListViewModel {
     var cancellables = Set<AnyCancellable>()
     @Published var characterList: CharacterList?
     
-    func getCharacterList() {
-        characterListService.getCharactersList(for: 1)
+    func getCharacterList(from pageNumber: Int) {
+        characterListService.getCharactersList(for: pageNumber)
             .sink { completion in
                 // Handle completion
                 switch completion {

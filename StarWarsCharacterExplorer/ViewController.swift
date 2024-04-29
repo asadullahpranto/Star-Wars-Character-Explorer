@@ -22,24 +22,39 @@ class ViewController: UIViewController {
     
     var cancellable = Set<AnyCancellable>()
     
+    private var pageNumber = 1
+    private var isNetworkCallOngoing = false
+    
     @IBOutlet weak var tableView: UITableView!
     var viewModel = CharacterListViewModel()
     private lazy var datasource = makeDataSource()
+    
+    private var characterList = [CharacterInfo]() {
+        didSet {
+            self.applySnapshot(with: characterList, isAnimated: false)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupViews()
-        getCharacterList()
        
         viewModel.$characterList
+            .receive(on: DispatchQueue.main)
             .sink { value in
-                
-                if let value = value?.list{
-                    self.applySnapshot(with: value)
+                if let value = value {
+                    self.isNetworkCallOngoing = false
+                    self.characterList.append(contentsOf: value.list)
+    
+//                    if let nextPage = value.nextPage {
+//                        self.loadCharacterList()
+//                    }
                 }
             }
             .store(in: &cancellable)
+        
+        loadCharacterList()
     }
 
     private func setupViews() {
@@ -48,21 +63,24 @@ class ViewController: UIViewController {
         tableView.register(UINib(nibName: CharacterListCell.className, bundle: nil), forCellReuseIdentifier: CharacterListCell.reuseID)
     }
     
-    private func getCharacterList() {
-        viewModel.getCharacterList()
-        if let list = viewModel.characterList?.list {
-            applySnapshot(with: list)
+    private func loadCharacterList() {
+        if !isNetworkCallOngoing {
+            isNetworkCallOngoing = true
+            viewModel.getCharacterList(from: pageNumber)
+            pageNumber += 1
         }
-        
     }
 
 }
 
 // tableView dataSoruce methods
-
 extension ViewController {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+    
     func makeDataSource() -> DataSource {
-        // 1
         let dataSource = DataSource(
             tableView: tableView,
             cellProvider: { (tableView, indexPath, item) ->
@@ -92,8 +110,24 @@ extension ViewController {
 // tableView delegate methods
 extension ViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let lastSection = tableView.numberOfSections - 1
+        let lastRow = tableView.numberOfRows(inSection: lastSection) - 1
+        
+        if indexPath.section == lastSection && indexPath.row == lastRow {
+           loadCharacterList()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        title = characterList[indexPath.row].name
+        let vc = RegisterViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
