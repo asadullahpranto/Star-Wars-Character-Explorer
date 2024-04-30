@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     private var isNetworkCallOngoing = false
     
     @IBOutlet weak var tableView: UITableView!
+    private var spinnerFooterView: UIView?
+    
     var viewModel = CharacterListViewModel()
     private lazy var datasource = makeDataSource()
     
@@ -44,26 +46,29 @@ class ViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { value in
                 if let value = value {
+                    self.tableView.hideLoadingFooter()
                     self.isNetworkCallOngoing = false
                     self.characterList.append(contentsOf: value.list)
-    
-//                    if let nextPage = value.nextPage {
-//                        self.loadCharacterList()
-//                    }
                 }
             }
             .store(in: &cancellable)
-        
         loadCharacterList()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     private func setupViews() {
+//        navigationController?.isNavigationBarHidden = true
+        
         tableView.delegate = self
         tableView.dataSource = datasource
         tableView.register(UINib(nibName: CharacterListCell.className, bundle: nil), forCellReuseIdentifier: CharacterListCell.reuseID)
     }
     
     private func loadCharacterList() {
+        tableView.showLoadingFooter()
         if !isNetworkCallOngoing {
             isNetworkCallOngoing = true
             viewModel.getCharacterList(from: pageNumber)
@@ -75,10 +80,6 @@ class ViewController: UIViewController {
 
 // tableView dataSoruce methods
 extension ViewController {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-    }
     
     func makeDataSource() -> DataSource {
         let dataSource = DataSource(
@@ -129,5 +130,12 @@ extension ViewController: UITableViewDelegate {
         let vc = RegisterViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        tableView.showLoadingFooter()
+//    }    
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        tableView.hideLoadingFooter()
+//    }
 }
 

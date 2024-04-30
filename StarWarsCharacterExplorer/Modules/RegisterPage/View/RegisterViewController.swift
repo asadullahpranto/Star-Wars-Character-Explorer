@@ -11,6 +11,8 @@ class RegisterViewController: UIViewController {
 
     @IBOutlet weak var genderButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
+    
+    @IBOutlet weak var signInButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,8 +21,10 @@ class RegisterViewController: UIViewController {
     
     private func configureViews() {
         registerButton.applyGradient(colours: [.orange, .red], startPoint: CGPoint(x: 0, y: 0.5), endPoint: CGPoint(x: 1, y: 0.5))
-        registerButton.layer.cornerRadius = 4
+        registerButton.layer.cornerRadius = 10
         registerButton.layer.masksToBounds = true
+        signInButton.setUnderlineTitle("Sign In")
+        signInButton.addTarget(self, action: #selector(gotoLoginPage), for: .touchUpInside)
         
         var genderOption = [UIMenuElement]()
         genderOption.append(UIAction(title: "Male") { _ in
@@ -32,10 +36,14 @@ class RegisterViewController: UIViewController {
         })
         
         genderButton.showsMenuAsPrimaryAction = true
-//        genderButton.changesSelectionAsPrimaryAction = true
-        
         genderButton.menu = UIMenu(options: .displayInline, children: genderOption)
         
         self.hideKeyboardWhenTappedAround()
+    }
+    
+    @objc private func gotoLoginPage() {
+        let loginVC = LoginViewController()
+        navigationController?.popToRootViewController(animated: true)
+        navigationController?.pushViewController(loginVC, animated: true)
     }
 }
