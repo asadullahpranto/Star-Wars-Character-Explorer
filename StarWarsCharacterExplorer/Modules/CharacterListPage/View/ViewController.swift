@@ -131,6 +131,7 @@ extension ViewController: UITableViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    
 //    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 //        tableView.showLoadingFooter()
 //    }    
