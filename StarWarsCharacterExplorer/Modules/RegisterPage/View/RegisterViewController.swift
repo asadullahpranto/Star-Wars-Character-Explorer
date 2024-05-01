@@ -13,6 +13,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     
     @IBOutlet weak var signInButton: UIButton!
+    
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var emailAgainField: UITextField!
+    @IBOutlet weak var phoneField: UITextField!
+    @IBOutlet weak var parentsNameField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,19 +33,36 @@ class RegisterViewController: UIViewController {
         signInButton.setUnderlineTitle("Sign In")
         signInButton.addTarget(self, action: #selector(gotoLoginPage), for: .touchUpInside)
         
+        setupFormFields()
+        setupGenderOption()
+        
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    private func setupFormFields() {
+        nameField.configurePlaceHolder(with: .darkGray, placeHolder: "Name*")
+        emailField.configurePlaceHolder(with: .darkGray, placeHolder: "Email*")
+        emailAgainField.configurePlaceHolder(with: .darkGray, placeHolder: "Confirm Email*")
+        phoneField.configurePlaceHolder(with: .darkGray, placeHolder: "Phone Number*")
+        parentsNameField.configurePlaceHolder(with: .darkGray, placeHolder: "Parents Name*")
+    }
+    
+    private func setupGenderOption() {
         var genderOption = [UIMenuElement]()
         genderOption.append(UIAction(title: "Male") { _ in
+            self.genderButton.setTitleColor(.white, for: .normal)
             self.genderButton.setTitle("Male", for: .normal)
+            self.parentsNameField.configurePlaceHolder(with: .darkGray, placeHolder: "Father's Name")
         })
         
         genderOption.append(UIAction(title: "Female") { _ in
+            self.genderButton.setTitleColor(.white, for: .normal)
             self.genderButton.setTitle("Female", for: .normal)
+            self.parentsNameField.configurePlaceHolder(with: .darkGray, placeHolder: "Mother's Name*")
         })
         
         genderButton.showsMenuAsPrimaryAction = true
         genderButton.menu = UIMenu(options: .displayInline, children: genderOption)
-        
-        self.hideKeyboardWhenTappedAround()
     }
     
     @objc private func gotoLoginPage() {

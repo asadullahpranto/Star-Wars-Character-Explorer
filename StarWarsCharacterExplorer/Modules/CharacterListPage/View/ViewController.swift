@@ -126,9 +126,11 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        title = characterList[indexPath.row].name
-        let vc = RegisterViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        title = "People"
+//        let vc = RegisterViewController()
+        let detailVC = CharacterDetailVC()
+        detailVC.personDetail = characterList[indexPath.row]
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     
