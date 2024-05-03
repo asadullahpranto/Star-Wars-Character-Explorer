@@ -9,11 +9,12 @@ import Foundation
 import Alamofire
 
 protocol Endpoint {
-    var scheme: String { get }
-    var host: String { get }
-    var path: String { get }
+//    var scheme: String { get }
+//    var host: String { get }
+//    var path: String { get }
     var method: HTTPMethod { get }
     var headers: HTTPHeaders { get }
-    var body: [String: Any]? { get }
-    var queryItems: [URLQueryItem]? { get }
+    var url: String { get }
+//    var body: [String: Any]? { get }
+//    var queryItems: [URLQueryItem]? { get }
 }

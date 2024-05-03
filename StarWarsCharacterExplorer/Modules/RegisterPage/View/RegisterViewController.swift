@@ -30,6 +30,7 @@ class RegisterViewController: UIViewController {
         registerButton.applyGradient(colours: [.orange, .red], startPoint: CGPoint(x: 0, y: 0.5), endPoint: CGPoint(x: 1, y: 0.5))
         registerButton.layer.cornerRadius = 10
         registerButton.layer.masksToBounds = true
+        registerButton.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         signInButton.setUnderlineTitle("Sign In")
         signInButton.addTarget(self, action: #selector(gotoLoginPage), for: .touchUpInside)
         
@@ -63,6 +64,22 @@ class RegisterViewController: UIViewController {
         
         genderButton.showsMenuAsPrimaryAction = true
         genderButton.menu = UIMenu(options: .displayInline, children: genderOption)
+    }
+    
+    @objc private func handleRegister() {
+        let userInfo = UserCredential(
+            name: "Asadullah Pranto",
+            email: "a@gmail.com",
+            phone: "1234",
+            gender: "male",
+            parentName: "aaa"
+        )
+        
+        UserInfo.addOrUpdateToDB(for: userInfo)
+    }
+    
+    @IBAction func hoverAction(_ sender: UIButton, forEvent event: UIEvent) {
+        
     }
     
     @objc private func gotoLoginPage() {

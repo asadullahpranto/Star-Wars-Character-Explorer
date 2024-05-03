@@ -11,12 +11,13 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
-    
     @IBOutlet weak var loginIconHolderView: UIView!
     
-    @IBOutlet weak var nameField: UITextField!
-    
+    @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailField: UITextField!
+    
+    let viewModel = LoginViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,16 +31,19 @@ class LoginViewController: UIViewController {
         loginIconHolderView.layer.borderWidth = 2
         loginIconHolderView.layer.borderColor = UIColor.white.cgColor
         
-        nameField.configurePlaceHolder(with: .darkGray, placeHolder: "Name")
-        nameField.addTarget(self, action: #selector(handleNameField), for: .valueChanged)
+        passwordField.configurePlaceHolder(with: .darkGray, placeHolder: "Password")
+        passwordField.isSecureTextEntry = true
+        passwordField.textContentType = .oneTimeCode
+        passwordField.addTarget(self, action: #selector(handlePasswordField), for: .editingChanged)
         
         emailField.configurePlaceHolder(with: .darkGray, placeHolder: "Email")
-        emailField.addTarget(self, action: #selector(handleEmailField), for: .valueChanged)
+        emailField.addTarget(self, action: #selector(handlePasswordField), for: .editingChanged)
         
         // login button
         loginButton.applyGradient(colours: [.orange, .red], startPoint: CGPoint(x: 0, y: 0.5), endPoint: CGPoint(x: 1, y: 0.5))
         loginButton.layer.cornerRadius = 10
         loginButton.layer.masksToBounds = true
+        loginButton.addTarget(self, action: #selector(handleUserLogin), for: .touchUpInside)
         
         // bottom section
         registerButton.setUnderlineTitle("Sign In")
@@ -48,12 +52,27 @@ class LoginViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
-    @objc private func handleNameField() {
-        
-    }
     
     @objc private func handleEmailField() {
         
+    }
+    
+    @objc private func handlePasswordField() {
+        
+    }
+    
+    @objc private func handleUserLogin() {
+        Task {
+            guard let email = emailField.text
+//                  let pass = passwordField.text 
+            else
+            { return }
+            let isValid = await viewModel.login(with: email, and: "123")
+            
+            if isValid {
+                navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     @objc private func gotoRegisterPage() {

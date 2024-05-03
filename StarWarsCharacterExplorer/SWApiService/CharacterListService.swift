@@ -9,12 +9,12 @@ import Foundation
 import Combine
 
 protocol CharacterListServiceable {
-    func getCharactersList(for pageNo: Int) -> AnyPublisher<CharacterList, RequestError>
+    func getCharactersList(from url: String) -> AnyPublisher<CharacterList, RequestError>
 }
 
 class CharacterListService: HTTPClient, CharacterListServiceable {
     
-    func getCharactersList(for pageNo: Int) -> AnyPublisher<CharacterList, RequestError> {
-        return sendRequest(endpoint: SWApiEndpoint.charactersListFor(page: pageNo), responseModel: CharacterList.self)
+    func getCharactersList(from url: String) -> AnyPublisher<CharacterList, RequestError> {
+        return sendRequest(endpoint: SWApiEndpoint.charactersList(url: url), responseModel: CharacterList.self)
     }
 }

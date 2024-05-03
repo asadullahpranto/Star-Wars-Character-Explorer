@@ -33,6 +33,7 @@ class CharacterDetailVC: UIViewController {
         setupPersonData()
     }
     
+    
     private func setupViews() {
         abbreviationNameHolder.layer.cornerRadius = abbreviationNameHolder.frame.width / 2
         abbreviationNameHolder.layer.masksToBounds = true
@@ -45,13 +46,13 @@ class CharacterDetailVC: UIViewController {
         if let personDetail {
             nameLabel.text = personDetail.name
             abbreviationName.text = personDetail.name.getNameComponents()
-            heightLabel.text = "Height: " +  personDetail.height
-            massLabel.text = "Weight: " +  personDetail.mass
-            hairColorLabel.text = "Hair: " +  personDetail.hairColor
-            skinColorLabel.text = "Skin: " +  personDetail.skinColor
-            eyeColorLabel.text = "Eye: " +  personDetail.eyeColor
+            heightLabel.text = "Height: " +  personDetail.height.capitalized
+            massLabel.text = "Weight: " +  personDetail.mass.capitalized
+            hairColorLabel.text = "Hair: " +  personDetail.hairColor.capitalized
+            skinColorLabel.text = "Skin: " +  personDetail.skinColor.capitalized
+            eyeColorLabel.text = "Eye: " +  personDetail.eyeColor.capitalized
             birthYearLabel.text = "Birth Year: " +  personDetail.birthYear
-            genderLabel.text = "Gender: " +  personDetail.gender
+            genderLabel.text = "Gender: " +  personDetail.gender.capitalized
         }
     }
 }

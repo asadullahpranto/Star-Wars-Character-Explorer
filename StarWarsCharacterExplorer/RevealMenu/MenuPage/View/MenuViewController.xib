@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Medium.ttf">
+            <string>Inter-Medium</string>
+        </array>
+        <array key="Inter-Regular.otf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="StarWarsCharacterExplorer" customModuleProvider="target">
+            <connections>
+                <outlet property="emailLabel" destination="Zg1-2Y-7tB" id="T5q-LG-IMS"/>
+                <outlet property="loginLogoutButton" destination="ZQ8-8K-7gl" id="SjM-aw-75x"/>
+                <outlet property="nameAbbreLabel" destination="JK3-Rf-BOb" id="YR3-RM-tEl"/>
+                <outlet property="nameLabel" destination="4ty-OE-LgP" id="cp3-0e-g9h"/>
+                <outlet property="profileView" destination="TfM-Au-s6J" id="1xX-Wn-daH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfM-Au-s6J">
+                    <rect key="frame" x="24" y="79" width="50" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK3-Rf-BOb">
+                            <rect key="frame" x="7" y="16.666666666666671" width="36" height="17"/>
+                            <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="TfM-Au-s6J" secondAttribute="height" multiplier="1:1" id="Up5-pz-pXI"/>
+                        <constraint firstItem="JK3-Rf-BOb" firstAttribute="centerX" secondItem="TfM-Au-s6J" secondAttribute="centerX" id="Zrh-s1-Pqg"/>
+                        <constraint firstItem="JK3-Rf-BOb" firstAttribute="centerY" secondItem="TfM-Au-s6J" secondAttribute="centerY" id="d7M-yf-qur"/>
+                        <constraint firstAttribute="width" constant="50" id="ogC-2K-axz"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ty-OE-LgP">
+                    <rect key="frame" x="84" y="84" width="68.333333333333314" height="16"/>
+                    <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="emailLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zg1-2Y-7tB">
+                    <rect key="frame" x="84" y="108" width="56.666666666666657" height="13.333333333333329"/>
+                    <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ8-8K-7gl">
+                    <rect key="frame" x="54.666666666666657" y="749" width="150" height="29"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="PPl-d7-ahg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Login"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.08235294118" green="0.078431372550000003" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4ty-OE-LgP" firstAttribute="top" secondItem="TfM-Au-s6J" secondAttribute="top" constant="5" id="6vW-Ax-vpT"/>
+                <constraint firstItem="TfM-Au-s6J" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="L7Z-Qr-bgX"/>
+                <constraint firstItem="Zg1-2Y-7tB" firstAttribute="top" secondItem="4ty-OE-LgP" secondAttribute="bottom" constant="8" symbolic="YES" id="Qlr-Ec-fdC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZQ8-8K-7gl" secondAttribute="bottom" constant="40" id="Scj-kX-sD2"/>
+                <constraint firstItem="ZQ8-8K-7gl" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="trailing" multiplier="0.33" id="UGe-R2-oJ9"/>
+                <constraint firstItem="4ty-OE-LgP" firstAttribute="leading" secondItem="TfM-Au-s6J" secondAttribute="trailing" constant="10" id="fbE-Ii-zll"/>
+                <constraint firstItem="Zg1-2Y-7tB" firstAttribute="leading" secondItem="4ty-OE-LgP" secondAttribute="leading" id="ixl-ua-bWq"/>
+                <constraint firstItem="TfM-Au-s6J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="t8o-Fz-YDM"/>
+            </constraints>
+            <point key="canvasLocation" x="314" y="210"/>
+        </view>
+    </objects>
+</document>

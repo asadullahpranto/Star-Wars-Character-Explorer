@@ -13,8 +13,7 @@
 		2D3514A12BE0B0BF005203E9 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D35149F2BE0B0BF005203E9 /* LoginViewController.xib */; };
 		2D4BFD3D2BD946AD007AFDB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD3C2BD946AD007AFDB9 /* AppDelegate.swift */; };
 		2D4BFD3F2BD946AD007AFDB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD3E2BD946AD007AFDB9 /* SceneDelegate.swift */; };
-		2D4BFD412BD946AD007AFDB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD402BD946AD007AFDB9 /* ViewController.swift */; };
-		2D4BFD442BD946AD007AFDB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4BFD422BD946AD007AFDB9 /* Main.storyboard */; };
+		2D4BFD412BD946AD007AFDB9 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD402BD946AD007AFDB9 /* ContainerViewController.swift */; };
 		2D4BFD472BD946AD007AFDB9 /* StarWarsCharacterExplorer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD452BD946AD007AFDB9 /* StarWarsCharacterExplorer.xcdatamodeld */; };
 		2D4BFD492BD946AF007AFDB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4BFD482BD946AF007AFDB9 /* Assets.xcassets */; };
 		2D4BFD4C2BD946AF007AFDB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4BFD4A2BD946AF007AFDB9 /* LaunchScreen.storyboard */; };
@@ -27,7 +26,7 @@
 		2D4BFD852BD94C18007AFDB9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD842BD94C18007AFDB9 /* HTTPClient.swift */; };
 		2D4BFD882BD950B1007AFDB9 /* SWApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD872BD950B1007AFDB9 /* SWApiEndpoint.swift */; };
 		2D4BFD8A2BD96374007AFDB9 /* CharacterListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD892BD96374007AFDB9 /* CharacterListService.swift */; };
-		2D4BFD8C2BD96536007AFDB9 /* CharacterDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD8B2BD96536007AFDB9 /* CharacterDetailsService.swift */; };
+		2D4BFD8C2BD96536007AFDB9 /* CharacterDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD8B2BD96536007AFDB9 /* CharacterDetailService.swift */; };
 		2D4BFD972BD969AF007AFDB9 /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4BFD962BD969AF007AFDB9 /* CharacterInfo.swift */; };
 		2D8068D82BE149DD00C801B2 /* UserInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8068D62BE149DD00C801B2 /* UserInfo+CoreDataClass.swift */; };
 		2D8068D92BE149DD00C801B2 /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8068D72BE149DD00C801B2 /* UserInfo+CoreDataProperties.swift */; };
@@ -48,6 +47,16 @@
 		3A3F1E4F2BE2BA700054CBFA /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F1E4E2BE2BA700054CBFA /* UITextField+Extension.swift */; };
 		3A3F1E552BE2DA030054CBFA /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F1E542BE2DA030054CBFA /* Inter-Regular.otf */; };
 		3A3F1E572BE2DB000054CBFA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F1E562BE2DB000054CBFA /* String+Extension.swift */; };
+		3A8E54482BE4C4240088E6BE /* FilmInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54472BE4C4240088E6BE /* FilmInfo.swift */; };
+		3A8E544A2BE4C5A50088E6BE /* SpeciesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54492BE4C5A50088E6BE /* SpeciesInfo.swift */; };
+		3A8E544F2BE4D8410088E6BE /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E544E2BE4D8410088E6BE /* MenuViewModel.swift */; };
+		3A8E54512BE4EF2A0088E6BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54502BE4EF2A0088E6BE /* LoginViewModel.swift */; };
+		3A8E54532BE4FEC70088E6BE /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54522BE4FEC70088E6BE /* UserCredential.swift */; };
+		3A8E54552BE5077F0088E6BE /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54542BE5077F0088E6BE /* CharacterDetailViewModel.swift */; };
+		3AA2B6422BE409C400D4957C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2B6402BE409C400D4957C /* HomeViewController.swift */; };
+		3AA2B6432BE409C400D4957C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA2B6412BE409C400D4957C /* HomeViewController.xib */; };
+		3AA2B6462BE409D900D4957C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2B6442BE409D900D4957C /* MenuViewController.swift */; };
+		3AA2B6472BE409D900D4957C /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA2B6452BE409D900D4957C /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +84,7 @@
 		2D4BFD392BD946AD007AFDB9 /* StarWarsCharacterExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsCharacterExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4BFD3C2BD946AD007AFDB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D4BFD3E2BD946AD007AFDB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D4BFD402BD946AD007AFDB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2D4BFD432BD946AD007AFDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2D4BFD402BD946AD007AFDB9 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		2D4BFD462BD946AD007AFDB9 /* StarWarsCharacterExplorer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StarWarsCharacterExplorer.xcdatamodel; sourceTree = "<group>"; };
 		2D4BFD482BD946AF007AFDB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D4BFD4B2BD946AF007AFDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,7 +99,7 @@
 		2D4BFD842BD94C18007AFDB9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		2D4BFD872BD950B1007AFDB9 /* SWApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWApiEndpoint.swift; sourceTree = "<group>"; };
 		2D4BFD892BD96374007AFDB9 /* CharacterListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListService.swift; sourceTree = "<group>"; };
-		2D4BFD8B2BD96536007AFDB9 /* CharacterDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsService.swift; sourceTree = "<group>"; };
+		2D4BFD8B2BD96536007AFDB9 /* CharacterDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailService.swift; sourceTree = "<group>"; };
 		2D4BFD962BD969AF007AFDB9 /* CharacterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
 		2D8068D62BE149DD00C801B2 /* UserInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2D8068D72BE149DD00C801B2 /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -112,6 +120,16 @@
 		3A3F1E4E2BE2BA700054CBFA /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		3A3F1E542BE2DA030054CBFA /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
 		3A3F1E562BE2DB000054CBFA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3A8E54472BE4C4240088E6BE /* FilmInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmInfo.swift; sourceTree = "<group>"; };
+		3A8E54492BE4C5A50088E6BE /* SpeciesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesInfo.swift; sourceTree = "<group>"; };
+		3A8E544E2BE4D8410088E6BE /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		3A8E54502BE4EF2A0088E6BE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3A8E54522BE4FEC70088E6BE /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
+		3A8E54542BE5077F0088E6BE /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		3AA2B6402BE409C400D4957C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3AA2B6412BE409C400D4957C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		3AA2B6442BE409D900D4957C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3AA2B6452BE409D900D4957C /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,9 +183,10 @@
 			children = (
 				2DD169BD2BDFE47A0091D8EA /* Fonts */,
 				2D82A54C2BDEA6C300807989 /* Extensions */,
-				2D4BFD8D2BD96756007AFDB9 /* CoreData */,
+				2D4BFD8D2BD96756007AFDB9 /* DataBase */,
 				2D4BFD862BD9506F007AFDB9 /* SWApiService */,
 				2D4BFD7D2BD94AFD007AFDB9 /* NetworkLayer */,
+				3AA2B63F2BE4010C00D4957C /* RevealMenu */,
 				2D4BFD8E2BD9678D007AFDB9 /* Modules */,
 				2D4BFD3C2BD946AD007AFDB9 /* AppDelegate.swift */,
 				2D4BFD3E2BD946AD007AFDB9 /* SceneDelegate.swift */,
@@ -210,19 +229,19 @@
 			children = (
 				2D4BFD872BD950B1007AFDB9 /* SWApiEndpoint.swift */,
 				2D4BFD892BD96374007AFDB9 /* CharacterListService.swift */,
-				2D4BFD8B2BD96536007AFDB9 /* CharacterDetailsService.swift */,
+				2D4BFD8B2BD96536007AFDB9 /* CharacterDetailService.swift */,
 			);
 			path = SWApiService;
 			sourceTree = "<group>";
 		};
-		2D4BFD8D2BD96756007AFDB9 /* CoreData */ = {
+		2D4BFD8D2BD96756007AFDB9 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
 				2D4BFD452BD946AD007AFDB9 /* StarWarsCharacterExplorer.xcdatamodeld */,
 				2D8068D62BE149DD00C801B2 /* UserInfo+CoreDataClass.swift */,
 				2D8068D72BE149DD00C801B2 /* UserInfo+CoreDataProperties.swift */,
 			);
-			path = CoreData;
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		2D4BFD8E2BD9678D007AFDB9 /* Modules */ = {
@@ -277,8 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				3A3F1E502BE2C8960054CBFA /* CharacterListCell */,
-				2D4BFD402BD946AD007AFDB9 /* ViewController.swift */,
-				2D4BFD422BD946AD007AFDB9 /* Main.storyboard */,
+				3AA2B6402BE409C400D4957C /* HomeViewController.swift */,
+				3AA2B6412BE409C400D4957C /* HomeViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +367,7 @@
 		3A3F1E4B2BE2AF3E0054CBFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A8E54522BE4FEC70088E6BE /* UserCredential.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,6 +382,7 @@
 		3A3F1E4D2BE2AF680054CBFA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3A8E54502BE4EF2A0088E6BE /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -378,6 +399,7 @@
 		3A3F1E512BE2CA130054CBFA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3A8E54542BE5077F0088E6BE /* CharacterDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -394,8 +416,45 @@
 		3A3F1E532BE2CA2B0054CBFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A8E54472BE4C4240088E6BE /* FilmInfo.swift */,
+				3A8E54492BE4C5A50088E6BE /* SpeciesInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3A8E544B2BE4D7CC0088E6BE /* MenuPage */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E544C2BE4D7E60088E6BE /* View */,
+				3A8E544D2BE4D7FB0088E6BE /* ViewModel */,
+			);
+			path = MenuPage;
+			sourceTree = "<group>";
+		};
+		3A8E544C2BE4D7E60088E6BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3AA2B6442BE409D900D4957C /* MenuViewController.swift */,
+				3AA2B6452BE409D900D4957C /* MenuViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A8E544D2BE4D7FB0088E6BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E544E2BE4D8410088E6BE /* MenuViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3AA2B63F2BE4010C00D4957C /* RevealMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E544B2BE4D7CC0088E6BE /* MenuPage */,
+				2D4BFD402BD946AD007AFDB9 /* ContainerViewController.swift */,
+			);
+			path = RevealMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,16 +569,17 @@
 			files = (
 				2D3514A12BE0B0BF005203E9 /* LoginViewController.xib in Resources */,
 				3A3F1E552BE2DA030054CBFA /* Inter-Regular.otf in Resources */,
+				3AA2B6472BE409D900D4957C /* MenuViewController.xib in Resources */,
 				2D4BFD4C2BD946AF007AFDB9 /* LaunchScreen.storyboard in Resources */,
 				2DD169C22BDFE48E0091D8EA /* Lato-Regular.ttf in Resources */,
 				2DD169BC2BDFE3540091D8EA /* RegisterViewController.xib in Resources */,
 				2D4BFD492BD946AF007AFDB9 /* Assets.xcassets in Resources */,
 				2DD169C52BDFE48E0091D8EA /* Lato-Medium.ttf in Resources */,
 				2DD169C32BDFE48E0091D8EA /* Inter-Medium.ttf in Resources */,
-				2D4BFD442BD946AD007AFDB9 /* Main.storyboard in Resources */,
 				3A3F1E4A2BE2AED90054CBFA /* CharacterDetailVC.xib in Resources */,
 				2D82A54B2BDEA5A900807989 /* CharacterListCell.xib in Resources */,
 				2DD169C42BDFE48E0091D8EA /* Lato-Bold.ttf in Resources */,
+				3AA2B6432BE409C400D4957C /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,27 +605,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D3514A02BE0B0BF005203E9 /* LoginViewController.swift in Sources */,
+				3A8E54482BE4C4240088E6BE /* FilmInfo.swift in Sources */,
 				2D4BFD832BD94B9F007AFDB9 /* Endpoint.swift in Sources */,
+				3A8E544F2BE4D8410088E6BE /* MenuViewModel.swift in Sources */,
 				2D4BFD882BD950B1007AFDB9 /* SWApiEndpoint.swift in Sources */,
 				2DD169C72BDFF74F0091D8EA /* UIView+Extension.swift in Sources */,
+				3A8E54552BE5077F0088E6BE /* CharacterDetailViewModel.swift in Sources */,
 				2D4BFD8A2BD96374007AFDB9 /* CharacterListService.swift in Sources */,
 				2DD169C92BDFFB560091D8EA /* UIViewController+Extension.swift in Sources */,
 				2D4BFD972BD969AF007AFDB9 /* CharacterInfo.swift in Sources */,
+				3A8E54532BE4FEC70088E6BE /* UserCredential.swift in Sources */,
 				2D82A5472BDE9DA600807989 /* CharacterListViewModel.swift in Sources */,
 				3A3F1E572BE2DB000054CBFA /* String+Extension.swift in Sources */,
-				2D4BFD412BD946AD007AFDB9 /* ViewController.swift in Sources */,
+				2D4BFD412BD946AD007AFDB9 /* ContainerViewController.swift in Sources */,
 				2DD169BB2BDFE3540091D8EA /* RegisterViewController.swift in Sources */,
+				3AA2B6422BE409C400D4957C /* HomeViewController.swift in Sources */,
 				2D4BFD852BD94C18007AFDB9 /* HTTPClient.swift in Sources */,
 				2D4BFD3D2BD946AD007AFDB9 /* AppDelegate.swift in Sources */,
 				2D4BFD812BD94B57007AFDB9 /* RequestError.swift in Sources */,
+				3A8E54512BE4EF2A0088E6BE /* LoginViewModel.swift in Sources */,
 				2D30EE8E2BE13E0300026EEE /* UIButton+Extension.swift in Sources */,
 				2D8068D92BE149DD00C801B2 /* UserInfo+CoreDataProperties.swift in Sources */,
 				2D4BFD3F2BD946AD007AFDB9 /* SceneDelegate.swift in Sources */,
 				2D82A54A2BDEA5A900807989 /* CharacterListCell.swift in Sources */,
 				2D30EE8C2BE1375B00026EEE /* UITableView+Extension.swift in Sources */,
+				3A8E544A2BE4C5A50088E6BE /* SpeciesInfo.swift in Sources */,
 				2D8068D82BE149DD00C801B2 /* UserInfo+CoreDataClass.swift in Sources */,
 				3A3F1E492BE2AED90054CBFA /* CharacterDetailVC.swift in Sources */,
-				2D4BFD8C2BD96536007AFDB9 /* CharacterDetailsService.swift in Sources */,
+				3AA2B6462BE409D900D4957C /* MenuViewController.swift in Sources */,
+				2D4BFD8C2BD96536007AFDB9 /* CharacterDetailService.swift in Sources */,
 				3A3F1E4F2BE2BA700054CBFA /* UITextField+Extension.swift in Sources */,
 				2D4BFD472BD946AD007AFDB9 /* StarWarsCharacterExplorer.xcdatamodeld in Sources */,
 				2D82A54E2BDEA6DF00807989 /* NSObject+Extension.swift in Sources */,
@@ -605,14 +673,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2D4BFD422BD946AD007AFDB9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D4BFD432BD946AD007AFDB9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2D4BFD4A2BD946AF007AFDB9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -756,7 +816,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -786,7 +845,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

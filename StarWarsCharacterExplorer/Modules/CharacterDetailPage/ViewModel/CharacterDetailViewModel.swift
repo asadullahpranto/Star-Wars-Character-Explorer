@@ -1,22 +1,21 @@
 //
-//  CharacterListViewModel.swift
+//  CharacterDetailViewModel.swift
 //  StarWarsCharacterExplorer
 //
-//  Created by Bitmorpher 4 on 4/28/24.
+//  Created by Md Amanullah on 3/5/24.
 //
 
 import Foundation
 import Combine
 
-class CharacterListViewModel {
-    let characterListService = CharacterListService()
+class CharacterDetailViewModel {
+    private let charDetailService = CharacterDetailService()
     var cancellables = Set<AnyCancellable>()
-    let firstPageUrl = "https://swapi.dev/api/people/?page=1"
     
-    @Published var characterList: CharacterList?
+    @Published var filmPublisher = PassthroughSubject<FilmInfo?, RequestError>()
     
-    func getCharacterList(from url: String) {
-        characterListService.getCharactersList(from: url)
+    func getFilmDetail(by url: String) {
+        charDetailService.getFilmDetails(by: url)
             .sink { completion in
                 // Handle completion
                 switch completion {
@@ -26,12 +25,12 @@ class CharacterListViewModel {
                 case .failure(let error):
                     // Handle error
                     print("Error: \(error)")
+                    self.filmPublisher.send(completion: .failure(error))
                 }
             } receiveValue: { response in
-                self.characterList = response
+                self.filmPublisher.send(response)
                 print("Response: \(response)")
             }
             .store(in: &cancellables)
-        
     }
 }

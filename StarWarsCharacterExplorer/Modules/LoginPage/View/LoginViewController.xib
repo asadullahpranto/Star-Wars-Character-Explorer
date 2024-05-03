@@ -22,7 +22,7 @@
                 <outlet property="emailField" destination="hcG-WL-oN1" id="bCZ-kx-3IW"/>
                 <outlet property="loginButton" destination="ooT-Mx-uRb" id="hHU-O2-v1U"/>
                 <outlet property="loginIconHolderView" destination="PQZ-1I-ety" id="bkI-EM-8mr"/>
-                <outlet property="nameField" destination="YPi-V2-S2W" id="Wat-DA-04z"/>
+                <outlet property="passwordField" destination="YPi-V2-S2W" id="as1-Le-yEY"/>
                 <outlet property="registerButton" destination="7oc-Is-ERn" id="Aq4-JU-Vje"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -53,46 +53,8 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="28I-SM-Nbc">
                     <rect key="frame" x="0.0" y="326" width="393" height="100"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KwI-Ed-O3u">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="45"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QcK-uE-T34">
-                                    <rect key="frame" x="24" y="12.666666666666684" width="24" height="20.666666666666664"/>
-                                    <color key="tintColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="24" id="iqO-Rx-Rf1"/>
-                                        <constraint firstAttribute="width" secondItem="QcK-uE-T34" secondAttribute="height" id="nDm-nD-FEw"/>
-                                    </constraints>
-                                </imageView>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPi-V2-S2W">
-                                    <rect key="frame" x="68" y="10.666666666666686" width="301" height="24"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jac-yz-fn4" userLabel="BarView">
-                                    <rect key="frame" x="24" y="44" width="345" height="1"/>
-                                    <color key="backgroundColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="t6Y-12-fc9"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="YPi-V2-S2W" firstAttribute="leading" secondItem="QcK-uE-T34" secondAttribute="trailing" constant="20" id="0gR-g6-8oa"/>
-                                <constraint firstAttribute="bottom" secondItem="Jac-yz-fn4" secondAttribute="bottom" id="3l7-En-a9n"/>
-                                <constraint firstItem="QcK-uE-T34" firstAttribute="leading" secondItem="KwI-Ed-O3u" secondAttribute="leading" constant="24" id="E93-k5-Tg2"/>
-                                <constraint firstItem="YPi-V2-S2W" firstAttribute="height" secondItem="QcK-uE-T34" secondAttribute="height" id="Ey1-CJ-XL0"/>
-                                <constraint firstItem="Jac-yz-fn4" firstAttribute="trailing" secondItem="YPi-V2-S2W" secondAttribute="trailing" id="Mp6-L2-vUD"/>
-                                <constraint firstItem="Jac-yz-fn4" firstAttribute="leading" secondItem="QcK-uE-T34" secondAttribute="leading" id="PYx-ZW-dHk"/>
-                                <constraint firstItem="QcK-uE-T34" firstAttribute="centerY" secondItem="KwI-Ed-O3u" secondAttribute="centerY" id="XTM-8k-Brd"/>
-                                <constraint firstItem="YPi-V2-S2W" firstAttribute="centerY" secondItem="KwI-Ed-O3u" secondAttribute="centerY" id="tUj-kC-XZe"/>
-                                <constraint firstAttribute="trailing" secondItem="YPi-V2-S2W" secondAttribute="trailing" constant="24" id="uMj-Tt-vZR"/>
-                            </constraints>
-                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpZ-yg-JRm">
-                            <rect key="frame" x="0.0" y="55" width="393" height="45"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="45"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2YD-HV-60y">
                                     <rect key="frame" x="24" y="13.00000000000002" width="24" height="20"/>
@@ -106,7 +68,7 @@
                                     <rect key="frame" x="68" y="10.666666666666686" width="301" height="24"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" spellCheckingType="no" textContentType="email"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Le5-kd-0ql" userLabel="BarView">
                                     <rect key="frame" x="24" y="44" width="345" height="1"/>
@@ -127,6 +89,44 @@
                                 <constraint firstItem="2YD-HV-60y" firstAttribute="centerY" secondItem="UpZ-yg-JRm" secondAttribute="centerY" id="YnY-b7-XeJ"/>
                                 <constraint firstAttribute="bottom" secondItem="Le5-kd-0ql" secondAttribute="bottom" id="aJd-D0-flK"/>
                                 <constraint firstItem="2YD-HV-60y" firstAttribute="leading" secondItem="UpZ-yg-JRm" secondAttribute="leading" constant="24" id="vS9-WE-2KG"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KwI-Ed-O3u">
+                            <rect key="frame" x="0.0" y="55" width="393" height="45"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QcK-uE-T34">
+                                    <rect key="frame" x="24" y="12.000000000000021" width="24" height="22"/>
+                                    <color key="tintColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="iqO-Rx-Rf1"/>
+                                        <constraint firstAttribute="width" secondItem="QcK-uE-T34" secondAttribute="height" id="nDm-nD-FEw"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPi-V2-S2W">
+                                    <rect key="frame" x="68" y="10.666666666666686" width="301" height="24"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="password"/>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jac-yz-fn4" userLabel="BarView">
+                                    <rect key="frame" x="24" y="44" width="345" height="1"/>
+                                    <color key="backgroundColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="t6Y-12-fc9"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="YPi-V2-S2W" firstAttribute="leading" secondItem="QcK-uE-T34" secondAttribute="trailing" constant="20" id="0gR-g6-8oa"/>
+                                <constraint firstAttribute="bottom" secondItem="Jac-yz-fn4" secondAttribute="bottom" id="3l7-En-a9n"/>
+                                <constraint firstItem="QcK-uE-T34" firstAttribute="leading" secondItem="KwI-Ed-O3u" secondAttribute="leading" constant="24" id="E93-k5-Tg2"/>
+                                <constraint firstItem="YPi-V2-S2W" firstAttribute="height" secondItem="QcK-uE-T34" secondAttribute="height" id="Ey1-CJ-XL0"/>
+                                <constraint firstItem="Jac-yz-fn4" firstAttribute="trailing" secondItem="YPi-V2-S2W" secondAttribute="trailing" id="Mp6-L2-vUD"/>
+                                <constraint firstItem="Jac-yz-fn4" firstAttribute="leading" secondItem="QcK-uE-T34" secondAttribute="leading" id="PYx-ZW-dHk"/>
+                                <constraint firstItem="QcK-uE-T34" firstAttribute="centerY" secondItem="KwI-Ed-O3u" secondAttribute="centerY" id="XTM-8k-Brd"/>
+                                <constraint firstItem="YPi-V2-S2W" firstAttribute="centerY" secondItem="KwI-Ed-O3u" secondAttribute="centerY" id="tUj-kC-XZe"/>
+                                <constraint firstAttribute="trailing" secondItem="YPi-V2-S2W" secondAttribute="trailing" constant="24" id="uMj-Tt-vZR"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -189,8 +189,8 @@
     </objects>
     <resources>
         <image name="envelope.fill" catalog="system" width="128" height="85"/>
+        <image name="key.viewfinder" catalog="system" width="128" height="115"/>
         <image name="loginIcon" width="600" height="600"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

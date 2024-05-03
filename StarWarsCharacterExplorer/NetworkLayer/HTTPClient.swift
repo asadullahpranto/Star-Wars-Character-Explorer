@@ -17,17 +17,17 @@ extension HTTPClient {
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) -> AnyPublisher<T, RequestError> {
         
         // populate url components from Endpoint
-        var urlComponent = URLComponents()
-        urlComponent.scheme = endpoint.scheme
-        urlComponent.host = endpoint.host
-        urlComponent.path = endpoint.path
-        urlComponent.queryItems = endpoint.queryItems
+//        var urlComponent = URLComponents()
+//        urlComponent.scheme = endpoint.scheme
+//        urlComponent.host = endpoint.host
+//        urlComponent.path = endpoint.path
+//        urlComponent.queryItems = endpoint.queryItems
         
-        guard let url = urlComponent.url else {
+        guard let url = URL(string: endpoint.url) else {
             return Fail(error: .invalidURL).eraseToAnyPublisher()
         }
         
-        let request = AF.request(url, method: endpoint.method, parameters: endpoint.body, headers: endpoint.headers)
+        let request = AF.request(url, method: endpoint.method, headers: endpoint.headers)
         
         return request
             .publishDecodable(type: T.self)
@@ -39,22 +39,26 @@ extension HTTPClient {
                 }
             }
             .mapError { error in
-                if let afError = error as? AFError {
-                    switch afError {
-                    case .responseValidationFailed(reason: .unacceptableStatusCode(let code)):
-                        
-                        if code == 401 {
-                            return RequestError.unauthorized
-                        } else {
-                            return RequestError.unexpectedStatus
-                        }
-                    default:
-                        return RequestError.unknown
-                    }
-                } else {
-                    return RequestError.unknown
-                }
+                handleError(for: error)
             }
             .eraseToAnyPublisher()
+    }
+    
+    private func handleError(for error: Error) -> RequestError {
+        if let afError = error as? AFError {
+            switch afError {
+            case .responseValidationFailed(reason: .unacceptableStatusCode(let code)):
+  
+                if code == 401 {
+                    return RequestError.unauthorized
+                } else {
+                    return RequestError.unexpectedStatus
+                }
+            default:
+                return RequestError.unknown
+            }
+        } else {
+            return RequestError.unknown
+        }
     }
 }
