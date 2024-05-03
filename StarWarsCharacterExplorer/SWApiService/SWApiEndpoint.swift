@@ -10,7 +10,7 @@ import Alamofire
 
 enum SWApiEndpoint {
     case charactersList(url: String)
-    case characterDetailsBy(url: String)
+    case getDetailsBy(url: String)
     case filterCharactersBy(name: String?, species: String?, affiliation: String?, pageNo: Int)
 }
 
@@ -24,7 +24,7 @@ extension SWApiEndpoint: Endpoint {
         case .charactersList(let url):
             return url
             
-        case .characterDetailsBy(let url):
+        case .getDetailsBy(let url):
             return url
             
         case .filterCharactersBy(name: let name, species: let species, affiliation: let affiliation, pageNo: let pageNo):

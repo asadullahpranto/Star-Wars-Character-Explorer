@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Medium.ttf">
+            <string>Inter-Medium</string>
+        </array>
+        <array key="Inter-Regular.otf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CardViewCell" customModule="StarWarsCharacterExplorer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrr-vV-vel">
+                        <rect key="frame" x="10" y="10.000000000000002" width="90" height="27.666666666666671"/>
+                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP4-oP-gjQ">
+                        <rect key="frame" x="10" y="45.666666666666664" width="90" height="12"/>
+                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="kP4-oP-gjQ" secondAttribute="trailing" constant="10" id="08v-It-uHr"/>
+                <constraint firstItem="rrr-vV-vel" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="IKS-wE-mJu"/>
+                <constraint firstAttribute="trailing" secondItem="rrr-vV-vel" secondAttribute="trailing" constant="10" id="IQB-h1-Bhw"/>
+                <constraint firstItem="kP4-oP-gjQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="OE7-Wi-N2E"/>
+                <constraint firstItem="rrr-vV-vel" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="fPC-Fm-xJy"/>
+                <constraint firstItem="kP4-oP-gjQ" firstAttribute="top" secondItem="rrr-vV-vel" secondAttribute="bottom" constant="8" symbolic="YES" id="ps4-iU-Ogz"/>
+                <constraint firstItem="rrr-vV-vel" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.25" id="sMr-a5-LDx"/>
+            </constraints>
+            <size key="customSize" width="110" height="110"/>
+            <connections>
+                <outlet property="modelLabel" destination="kP4-oP-gjQ" id="RKS-3t-cFJ"/>
+                <outlet property="nameLabel" destination="rrr-vV-vel" id="ezQ-Bp-D66"/>
+            </connections>
+            <point key="canvasLocation" x="-14" y="-93"/>
+        </collectionViewCell>
+    </objects>
+</document>

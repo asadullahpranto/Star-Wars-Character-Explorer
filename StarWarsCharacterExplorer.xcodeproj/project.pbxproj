@@ -47,12 +47,14 @@
 		3A3F1E4F2BE2BA700054CBFA /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F1E4E2BE2BA700054CBFA /* UITextField+Extension.swift */; };
 		3A3F1E552BE2DA030054CBFA /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F1E542BE2DA030054CBFA /* Inter-Regular.otf */; };
 		3A3F1E572BE2DB000054CBFA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F1E562BE2DB000054CBFA /* String+Extension.swift */; };
-		3A8E54482BE4C4240088E6BE /* FilmInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54472BE4C4240088E6BE /* FilmInfo.swift */; };
-		3A8E544A2BE4C5A50088E6BE /* SpeciesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54492BE4C5A50088E6BE /* SpeciesInfo.swift */; };
+		3A8E54482BE4C4240088E6BE /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54472BE4C4240088E6BE /* Starship.swift */; };
+		3A8E544A2BE4C5A50088E6BE /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54492BE4C5A50088E6BE /* Planet.swift */; };
 		3A8E544F2BE4D8410088E6BE /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E544E2BE4D8410088E6BE /* MenuViewModel.swift */; };
 		3A8E54512BE4EF2A0088E6BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54502BE4EF2A0088E6BE /* LoginViewModel.swift */; };
 		3A8E54532BE4FEC70088E6BE /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54522BE4FEC70088E6BE /* UserCredential.swift */; };
 		3A8E54552BE5077F0088E6BE /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54542BE5077F0088E6BE /* CharacterDetailViewModel.swift */; };
+		3A8E545D2BE560970088E6BE /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E545B2BE560970088E6BE /* CardViewCell.swift */; };
+		3A8E545E2BE560970088E6BE /* CardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E545C2BE560970088E6BE /* CardViewCell.xib */; };
 		3AA2B6422BE409C400D4957C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2B6402BE409C400D4957C /* HomeViewController.swift */; };
 		3AA2B6432BE409C400D4957C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA2B6412BE409C400D4957C /* HomeViewController.xib */; };
 		3AA2B6462BE409D900D4957C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2B6442BE409D900D4957C /* MenuViewController.swift */; };
@@ -120,12 +122,14 @@
 		3A3F1E4E2BE2BA700054CBFA /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		3A3F1E542BE2DA030054CBFA /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
 		3A3F1E562BE2DB000054CBFA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		3A8E54472BE4C4240088E6BE /* FilmInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmInfo.swift; sourceTree = "<group>"; };
-		3A8E54492BE4C5A50088E6BE /* SpeciesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesInfo.swift; sourceTree = "<group>"; };
+		3A8E54472BE4C4240088E6BE /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
+		3A8E54492BE4C5A50088E6BE /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		3A8E544E2BE4D8410088E6BE /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		3A8E54502BE4EF2A0088E6BE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3A8E54522BE4FEC70088E6BE /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 		3A8E54542BE5077F0088E6BE /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		3A8E545B2BE560970088E6BE /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
+		3A8E545C2BE560970088E6BE /* CardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewCell.xib; sourceTree = "<group>"; };
 		3AA2B6402BE409C400D4957C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3AA2B6412BE409C400D4957C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		3AA2B6442BE409D900D4957C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -407,6 +411,7 @@
 		3A3F1E522BE2CA210054CBFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A8E54562BE5600D0088E6BE /* CardViewCell */,
 				3A3F1E472BE2AED90054CBFA /* CharacterDetailVC.swift */,
 				3A3F1E482BE2AED90054CBFA /* CharacterDetailVC.xib */,
 			);
@@ -416,8 +421,8 @@
 		3A3F1E532BE2CA2B0054CBFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3A8E54472BE4C4240088E6BE /* FilmInfo.swift */,
-				3A8E54492BE4C5A50088E6BE /* SpeciesInfo.swift */,
+				3A8E54472BE4C4240088E6BE /* Starship.swift */,
+				3A8E54492BE4C5A50088E6BE /* Planet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -446,6 +451,15 @@
 				3A8E544E2BE4D8410088E6BE /* MenuViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3A8E54562BE5600D0088E6BE /* CardViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E545B2BE560970088E6BE /* CardViewCell.swift */,
+				3A8E545C2BE560970088E6BE /* CardViewCell.xib */,
+			);
+			path = CardViewCell;
 			sourceTree = "<group>";
 		};
 		3AA2B63F2BE4010C00D4957C /* RevealMenu */ = {
@@ -575,6 +589,7 @@
 				2DD169BC2BDFE3540091D8EA /* RegisterViewController.xib in Resources */,
 				2D4BFD492BD946AF007AFDB9 /* Assets.xcassets in Resources */,
 				2DD169C52BDFE48E0091D8EA /* Lato-Medium.ttf in Resources */,
+				3A8E545E2BE560970088E6BE /* CardViewCell.xib in Resources */,
 				2DD169C32BDFE48E0091D8EA /* Inter-Medium.ttf in Resources */,
 				3A3F1E4A2BE2AED90054CBFA /* CharacterDetailVC.xib in Resources */,
 				2D82A54B2BDEA5A900807989 /* CharacterListCell.xib in Resources */,
@@ -605,7 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D3514A02BE0B0BF005203E9 /* LoginViewController.swift in Sources */,
-				3A8E54482BE4C4240088E6BE /* FilmInfo.swift in Sources */,
+				3A8E54482BE4C4240088E6BE /* Starship.swift in Sources */,
 				2D4BFD832BD94B9F007AFDB9 /* Endpoint.swift in Sources */,
 				3A8E544F2BE4D8410088E6BE /* MenuViewModel.swift in Sources */,
 				2D4BFD882BD950B1007AFDB9 /* SWApiEndpoint.swift in Sources */,
@@ -629,13 +644,14 @@
 				2D4BFD3F2BD946AD007AFDB9 /* SceneDelegate.swift in Sources */,
 				2D82A54A2BDEA5A900807989 /* CharacterListCell.swift in Sources */,
 				2D30EE8C2BE1375B00026EEE /* UITableView+Extension.swift in Sources */,
-				3A8E544A2BE4C5A50088E6BE /* SpeciesInfo.swift in Sources */,
+				3A8E544A2BE4C5A50088E6BE /* Planet.swift in Sources */,
 				2D8068D82BE149DD00C801B2 /* UserInfo+CoreDataClass.swift in Sources */,
 				3A3F1E492BE2AED90054CBFA /* CharacterDetailVC.swift in Sources */,
 				3AA2B6462BE409D900D4957C /* MenuViewController.swift in Sources */,
 				2D4BFD8C2BD96536007AFDB9 /* CharacterDetailService.swift in Sources */,
 				3A3F1E4F2BE2BA700054CBFA /* UITextField+Extension.swift in Sources */,
 				2D4BFD472BD946AD007AFDB9 /* StarWarsCharacterExplorer.xcdatamodeld in Sources */,
+				3A8E545D2BE560970088E6BE /* CardViewCell.swift in Sources */,
 				2D82A54E2BDEA6DF00807989 /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

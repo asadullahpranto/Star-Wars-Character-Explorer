@@ -9,16 +9,16 @@ import Foundation
 import Combine
 
 protocol CharacterDetailServiceable {
-    func getFilmDetails(by url: String) -> AnyPublisher<FilmInfo, RequestError>
-    func getSpeciesDetails(by url: String) -> AnyPublisher<SpeciesInfo, RequestError>
+    func getStarshipDetails(by url: String) -> AnyPublisher<Starship, RequestError>
+    func getPlanetDetails(by url: String) -> AnyPublisher<Planet, RequestError>
 }
 
 struct CharacterDetailService: HTTPClient, CharacterDetailServiceable {
-    func getSpeciesDetails(by url: String) -> AnyPublisher<SpeciesInfo, RequestError> {
-        return sendRequest(endpoint: SWApiEndpoint.characterDetailsBy(url: url), responseModel: SpeciesInfo.self)
+    func getPlanetDetails(by url: String) -> AnyPublisher<Planet, RequestError> {
+        return sendRequest(endpoint: SWApiEndpoint.getDetailsBy(url: url), responseModel: Planet.self)
     }
     
-    func getFilmDetails(by url: String) -> AnyPublisher<FilmInfo, RequestError> {
-        return sendRequest(endpoint: SWApiEndpoint.characterDetailsBy(url: url), responseModel: FilmInfo.self)
+    func getStarshipDetails(by url: String) -> AnyPublisher<Starship, RequestError> {
+        return sendRequest(endpoint: SWApiEndpoint.getDetailsBy(url: url), responseModel: Starship.self)
     }
 }
