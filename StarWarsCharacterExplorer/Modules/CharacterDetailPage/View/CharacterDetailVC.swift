@@ -10,14 +10,6 @@ import Combine
 
 class CharacterDetailVC: UIViewController {
     
-    enum Section: String {
-        case planet = "Planet"
-        case starship = "Starships"
-    }
-    
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, DisplayableItem>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, DisplayableItem>
-
     @IBOutlet weak var starshipsLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var abbreviationNameHolder: UIView!

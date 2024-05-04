@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Characters" representedClassName="Characters" syncable="YES" codeGenerationType="class">
+        <attribute name="birthYear" optional="YES" attributeType="String"/>
+        <attribute name="eyeColor" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="hairColor" optional="YES" attributeType="String"/>
+        <attribute name="height" optional="YES" attributeType="String"/>
+        <attribute name="homeworldId" optional="YES" attributeType="String"/>
+        <attribute name="mass" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="skinColor" optional="YES" attributeType="String"/>
+        <relationship name="planets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planets" inverseName="character" inverseEntity="Planets"/>
+        <relationship name="starships" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Starships" inverseName="characters" inverseEntity="Starships"/>
+    </entity>
+    <entity name="Planets" representedClassName="Planets" syncable="YES" codeGenerationType="class">
+        <attribute name="climate" optional="YES" attributeType="String"/>
+        <attribute name="gravity" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="population" optional="YES" attributeType="String"/>
+        <attribute name="rotationPeriod" optional="YES" attributeType="String"/>
+        <relationship name="character" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Characters" inverseName="planets" inverseEntity="Characters"/>
+    </entity>
+    <entity name="Starships" representedClassName="Starships" syncable="YES" codeGenerationType="class">
+        <attribute name="manufacturer" optional="YES" attributeType="String"/>
+        <attribute name="maxAtmospheringSpeed" optional="YES" attributeType="String"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="starshipClass" optional="YES" attributeType="String"/>
+        <relationship name="characters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Characters" inverseName="starships" inverseEntity="Characters"/>
+    </entity>
     <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="gender" optional="YES" attributeType="String"/>

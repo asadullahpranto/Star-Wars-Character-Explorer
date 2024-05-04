@@ -62,15 +62,15 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func handleUserLogin() {
-        Task {
-            guard let email = emailField.text
-//                  let pass = passwordField.text 
-            else
-            { return }
-            let isValid = await viewModel.login(with: email, and: "123")
+        guard let email = emailField.text else { return }
+        
+        viewModel.login(with: email, and: "123") { [weak self] isValid in
+            guard let self else { return }
             
-            if isValid {
-                navigationController?.popViewController(animated: true)
+            DispatchQueue.main.async {
+                if isValid {
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
         }
     }

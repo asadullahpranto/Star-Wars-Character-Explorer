@@ -9,7 +9,7 @@ import Foundation
 
 class MenuViewModel {
     
-    func getUserInfo(using email: String?) async -> Result<UserInfo, CoreDataError> {
-        return await UserInfo.fetchUser(using: email)
+    func getUserInfo(using email: String?, completion: @escaping (Result<UserInfo, CoreDataError>) -> Void) {
+        UserInfo.fetchUser(using: email, completion: completion)
     }
 }

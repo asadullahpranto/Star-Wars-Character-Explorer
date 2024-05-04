@@ -33,9 +33,10 @@ class MenuViewController: UIViewController {
         loginLogoutButton.layer.cornerRadius = loginLogoutButton.frame.height / 4
     }
     
-    private func fetchUserInfo() {
-        Task {
-            let result = await viewModel.getUserInfo(using: nil)
+    func fetchUserInfo() {
+        viewModel.getUserInfo(using: nil) { [weak self] result in
+            guard let self else { return }
+            
             switch result {
             case .success(let userInfo):
                 DispatchQueue.main.async {
@@ -46,8 +47,11 @@ class MenuViewController: UIViewController {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-                self.loginLogoutButton.setTitle("Sign In", for: .normal)
+                DispatchQueue.main.async {
+                    self.loginLogoutButton.setTitle("Sign In", for: .normal)
+                }
             }
         }
+        
     }
 }

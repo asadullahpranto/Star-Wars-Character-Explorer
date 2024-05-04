@@ -8,15 +8,17 @@
 import Foundation
 
 class LoginViewModel {
-    func login(with email: String, and password: String) async -> Bool {
-        let result = await UserInfo.fetchUser(using: email)
-        
-        switch result {
-        case .success:
-            return true
+    func login(with email: String, and password: String, completion: @escaping (Bool) -> Void) {
+        UserInfo.fetchUser(using: email) { [weak self] result in
+            guard let self else { return }
             
-        case .failure:
-            return false
+            switch result {
+            case .success:
+                completion(true)
+                
+            case .failure:
+                completion(false)
+            }
         }
     }
 }

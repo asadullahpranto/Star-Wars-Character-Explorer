@@ -41,43 +41,66 @@ public class UserInfo: NSManagedObject {
         }
     }
     
-    class func addOrUpdateToDB(for userInfo: UserCredential) {
-        container?.performBackgroundTask {
-            context in
-            do{
-                let person = UserInfo(context: context)
-                person.name = userInfo.name
-                person.email = userInfo.email
-                person.gender = userInfo.gender
-                person.parentName = userInfo.parentName
-                person.phoneNumber = userInfo.phone
-                try context.save()
+    class func addOrUpdateToDB(for userInfo: UserCredential, completion: @escaping (Bool) -> Void) {
+        guard let context = container?.newBackgroundContext() else { return }
+        
+        context.automaticallyMergesChangesFromParent = true
+        
+        context.perform {
+            do {
+                let userObj = UserInfo(context: context)
+                userObj.name = userInfo.name
+                userObj.email = userInfo.email
+                userObj.gender = userInfo.gender
+                userObj.parentName = userInfo.parentName
+                userObj.phoneNumber = userInfo.phone
                 
+                try context.save()
+                completion(true)
             } catch {
                 print("DB ERROR: \(error.localizedDescription)")
+                completion(false)
             }
         }
+//        container?.performBackgroundTask {
+//            context in
+//            do{
+//                let person = UserInfo(context: context)
+//                person.name = userInfo.name
+//                person.email = userInfo.email
+//                person.gender = userInfo.gender
+//                person.parentName = userInfo.parentName
+//                person.phoneNumber = userInfo.phone
+//                try context.save()
+//                
+//            } catch {
+//                print("DB ERROR: \(error.localizedDescription)")
+//            }
+//        }
     }
 
-    class func fetchUser(using email: String?) async -> Result<UserInfo, CoreDataError> {
-        let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
-        if let email {
-            request.predicate = NSPredicate(format: "email == %@", email)
-        }
+    class func fetchUser(using email: String?, completion: @escaping (Result<UserInfo, CoreDataError>) -> Void) {
         
-        let viewContext = container?.viewContext
-
+        guard let context = container?.viewContext else { return }
+        
         do {
-            let results = try viewContext?.fetch(request)
-            if let userInfo = results?.first {
-                return .success(userInfo)
+            let fetchRequest: NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
+            if let email {
+                fetchRequest.predicate = NSPredicate(format: "email == %@", email)
             }
-            
-            return .failure(CoreDataError.unknown)
-            
-        } catch {
-            print(error.localizedDescription)
-            return .failure(CoreDataError.fetchError)
+            do {
+                let results = try context.fetch(fetchRequest)
+                
+                if let userInfo = results.first {
+                    completion(.success(userInfo))
+                    print(userInfo.name, "name")
+                    print(userInfo.email, "email")
+                } else {
+                    completion(.failure(CoreDataError.unknown))
+                }
+            } catch {
+                completion(.failure(CoreDataError.fetchError))
+            }
         }
     }
 }

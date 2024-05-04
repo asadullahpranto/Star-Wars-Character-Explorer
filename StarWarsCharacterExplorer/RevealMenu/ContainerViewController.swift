@@ -104,6 +104,7 @@ extension ContainerViewController: HomeViewControllerDelegate {
                 self.coverView.alpha = 1
                 self.coverView.isHidden = false
                 self.homeVC.searchBarVC.searchBar.isUserInteractionEnabled = false
+                self.menuVC.fetchUserInfo()
                 
             } completion: { [weak self] isComplete in
                 guard let self else {

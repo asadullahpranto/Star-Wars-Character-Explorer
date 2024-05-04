@@ -75,7 +75,18 @@ class RegisterViewController: UIViewController {
             parentName: "aaa"
         )
         
-        UserInfo.addOrUpdateToDB(for: userInfo)
+        UserInfo.addOrUpdateToDB(for: userInfo) { [weak self] isComplete in
+            guard let self else { return }
+            
+            DispatchQueue.main.async {
+                if isComplete {
+                    self.navigationController?.popViewController(animated: true)
+                } else {
+                    
+                }
+            }
+        }
+       
     }
     
     @IBAction func hoverAction(_ sender: UIButton, forEvent event: UIEvent) {
