@@ -47,6 +47,12 @@
 		3A3F1E4F2BE2BA700054CBFA /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F1E4E2BE2BA700054CBFA /* UITextField+Extension.swift */; };
 		3A3F1E552BE2DA030054CBFA /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F1E542BE2DA030054CBFA /* Inter-Regular.otf */; };
 		3A3F1E572BE2DB000054CBFA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F1E562BE2DB000054CBFA /* String+Extension.swift */; };
+		3A646BA62BE612AD002ADF9B /* Characters+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A646BA02BE612AD002ADF9B /* Characters+CoreDataClass.swift */; };
+		3A646BA72BE612AD002ADF9B /* Characters+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A646BA12BE612AD002ADF9B /* Characters+CoreDataProperties.swift */; };
+		3A646BA82BE612AD002ADF9B /* Starships+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A646BA22BE612AD002ADF9B /* Starships+CoreDataClass.swift */; };
+		3A646BA92BE612AD002ADF9B /* Starships+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A646BA32BE612AD002ADF9B /* Starships+CoreDataProperties.swift */; };
+		3A646BAA2BE612AD002ADF9B /* Planets+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A646BA42BE612AD002ADF9B /* Planets+CoreDataClass.swift */; };
+		3A646BAB2BE612AD002ADF9B /* Planets+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A646BA52BE612AD002ADF9B /* Planets+CoreDataProperties.swift */; };
 		3A8E54482BE4C4240088E6BE /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54472BE4C4240088E6BE /* Starship.swift */; };
 		3A8E544A2BE4C5A50088E6BE /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E54492BE4C5A50088E6BE /* Planet.swift */; };
 		3A8E544F2BE4D8410088E6BE /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E544E2BE4D8410088E6BE /* MenuViewModel.swift */; };
@@ -122,6 +128,12 @@
 		3A3F1E4E2BE2BA700054CBFA /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		3A3F1E542BE2DA030054CBFA /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
 		3A3F1E562BE2DB000054CBFA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3A646BA02BE612AD002ADF9B /* Characters+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Characters+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A646BA12BE612AD002ADF9B /* Characters+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Characters+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3A646BA22BE612AD002ADF9B /* Starships+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Starships+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A646BA32BE612AD002ADF9B /* Starships+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Starships+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3A646BA42BE612AD002ADF9B /* Planets+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Planets+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A646BA52BE612AD002ADF9B /* Planets+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Planets+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3A8E54472BE4C4240088E6BE /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		3A8E54492BE4C5A50088E6BE /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		3A8E544E2BE4D8410088E6BE /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
@@ -244,6 +256,12 @@
 				2D4BFD452BD946AD007AFDB9 /* StarWarsCharacterExplorer.xcdatamodeld */,
 				2D8068D62BE149DD00C801B2 /* UserInfo+CoreDataClass.swift */,
 				2D8068D72BE149DD00C801B2 /* UserInfo+CoreDataProperties.swift */,
+				3A646BA02BE612AD002ADF9B /* Characters+CoreDataClass.swift */,
+				3A646BA12BE612AD002ADF9B /* Characters+CoreDataProperties.swift */,
+				3A646BA22BE612AD002ADF9B /* Starships+CoreDataClass.swift */,
+				3A646BA32BE612AD002ADF9B /* Starships+CoreDataProperties.swift */,
+				3A646BA42BE612AD002ADF9B /* Planets+CoreDataClass.swift */,
+				3A646BA52BE612AD002ADF9B /* Planets+CoreDataProperties.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -626,8 +644,10 @@
 				2D4BFD882BD950B1007AFDB9 /* SWApiEndpoint.swift in Sources */,
 				2DD169C72BDFF74F0091D8EA /* UIView+Extension.swift in Sources */,
 				3A8E54552BE5077F0088E6BE /* CharacterDetailViewModel.swift in Sources */,
+				3A646BA82BE612AD002ADF9B /* Starships+CoreDataClass.swift in Sources */,
 				2D4BFD8A2BD96374007AFDB9 /* CharacterListService.swift in Sources */,
 				2DD169C92BDFFB560091D8EA /* UIViewController+Extension.swift in Sources */,
+				3A646BAB2BE612AD002ADF9B /* Planets+CoreDataProperties.swift in Sources */,
 				2D4BFD972BD969AF007AFDB9 /* CharacterInfo.swift in Sources */,
 				3A8E54532BE4FEC70088E6BE /* UserCredential.swift in Sources */,
 				2D82A5472BDE9DA600807989 /* CharacterListViewModel.swift in Sources */,
@@ -636,17 +656,21 @@
 				2DD169BB2BDFE3540091D8EA /* RegisterViewController.swift in Sources */,
 				3AA2B6422BE409C400D4957C /* HomeViewController.swift in Sources */,
 				2D4BFD852BD94C18007AFDB9 /* HTTPClient.swift in Sources */,
+				3A646BAA2BE612AD002ADF9B /* Planets+CoreDataClass.swift in Sources */,
 				2D4BFD3D2BD946AD007AFDB9 /* AppDelegate.swift in Sources */,
+				3A646BA92BE612AD002ADF9B /* Starships+CoreDataProperties.swift in Sources */,
 				2D4BFD812BD94B57007AFDB9 /* RequestError.swift in Sources */,
 				3A8E54512BE4EF2A0088E6BE /* LoginViewModel.swift in Sources */,
 				2D30EE8E2BE13E0300026EEE /* UIButton+Extension.swift in Sources */,
 				2D8068D92BE149DD00C801B2 /* UserInfo+CoreDataProperties.swift in Sources */,
 				2D4BFD3F2BD946AD007AFDB9 /* SceneDelegate.swift in Sources */,
+				3A646BA62BE612AD002ADF9B /* Characters+CoreDataClass.swift in Sources */,
 				2D82A54A2BDEA5A900807989 /* CharacterListCell.swift in Sources */,
 				2D30EE8C2BE1375B00026EEE /* UITableView+Extension.swift in Sources */,
 				3A8E544A2BE4C5A50088E6BE /* Planet.swift in Sources */,
 				2D8068D82BE149DD00C801B2 /* UserInfo+CoreDataClass.swift in Sources */,
 				3A3F1E492BE2AED90054CBFA /* CharacterDetailVC.swift in Sources */,
+				3A646BA72BE612AD002ADF9B /* Characters+CoreDataProperties.swift in Sources */,
 				3AA2B6462BE409D900D4957C /* MenuViewController.swift in Sources */,
 				2D4BFD8C2BD96536007AFDB9 /* CharacterDetailService.swift in Sources */,
 				3A3F1E4F2BE2BA700054CBFA /* UITextField+Extension.swift in Sources */,

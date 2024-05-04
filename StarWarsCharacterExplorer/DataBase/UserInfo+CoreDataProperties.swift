@@ -21,6 +21,7 @@ extension UserInfo {
     @NSManaged public var name: String?
     @NSManaged public var parentName: String?
     @NSManaged public var phoneNumber: String?
+    @NSManaged public var isLoggedIn: Bool
 
 }
 

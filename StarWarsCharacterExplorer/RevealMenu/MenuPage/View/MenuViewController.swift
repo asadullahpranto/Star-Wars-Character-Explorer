@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol SlideMenuDelegate: AnyObject {
+    func didTapMenuButton()
+}
+
+protocol LoginLogoutDelegate: AnyObject {
+    func didLoginLogoutTapped(email: String, isLogingOut: Bool)
+}
+
 class MenuViewController: UIViewController {
 
     @IBOutlet weak var nameAbbreLabel: UILabel!
@@ -15,7 +23,11 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var loginLogoutButton: UIButton!
     
+    weak var delegate: LoginLogoutDelegate?
+    
     let viewModel = MenuViewModel()
+    private var isLoggedIn = false
+    private var email = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +43,11 @@ class MenuViewController: UIViewController {
         profileView.layer.masksToBounds = true
         
         loginLogoutButton.layer.cornerRadius = loginLogoutButton.frame.height / 4
+        loginLogoutButton.addTarget(self, action: #selector(handleLoginLogout), for: .touchUpInside)
+    }
+    
+    @objc private func handleLoginLogout() {
+        delegate?.didLoginLogoutTapped(email: email, isLogingOut: true)
     }
     
     func fetchUserInfo() {
@@ -40,10 +57,22 @@ class MenuViewController: UIViewController {
             switch result {
             case .success(let userInfo):
                 DispatchQueue.main.async {
-                    self.nameAbbreLabel.text = userInfo.name?.getNameComponents()
-                    self.nameLabel.text = userInfo.name
-                    self.emailLabel.text = userInfo.email
-                    self.loginLogoutButton.setTitle("Sign Out", for: .normal)
+                    if userInfo.isLoggedIn {
+                        self.isLoggedIn = true
+                        self.email = userInfo.email ?? ""
+                        self.nameAbbreLabel.text = userInfo.name?.getNameComponents()
+                        self.nameLabel.text = userInfo.name
+                        self.emailLabel.text = userInfo.email
+                        self.loginLogoutButton.setTitle("Sign Out", for: .normal)
+                    } else {
+                        self.isLoggedIn = false
+                        self.email = ""
+                        self.nameAbbreLabel.text = "AA"
+                        self.nameLabel.text = nil
+                        self.emailLabel.text = nil
+                        self.loginLogoutButton.setTitle("Sign In", for: .normal)
+                    }
+                    
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -52,6 +81,5 @@ class MenuViewController: UIViewController {
                 }
             }
         }
-        
     }
 }

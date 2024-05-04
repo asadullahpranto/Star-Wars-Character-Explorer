@@ -13,10 +13,10 @@ class LoginViewModel {
             guard let self else { return }
             
             switch result {
-            case .success:
+            case .success(let value):
                 completion(true)
                 
-            case .failure:
+            case .failure(let error):
                 completion(false)
             }
         }

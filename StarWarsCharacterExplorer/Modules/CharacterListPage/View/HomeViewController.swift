@@ -8,10 +8,6 @@
 import UIKit
 import Combine
 
-protocol HomeViewControllerDelegate: AnyObject {
-    func didTapMenuButton()
-}
-
 class HomeViewController: UIViewController {
     
     enum Section {
@@ -33,7 +29,7 @@ class HomeViewController: UIViewController {
     private var nextPage: String?
     private var isNetworkCallOngoing = false
     
-    weak var delegate: HomeViewControllerDelegate?
+    weak var delegate: SlideMenuDelegate?
     
     private var characterList = [CharacterInfo]() {
         didSet {

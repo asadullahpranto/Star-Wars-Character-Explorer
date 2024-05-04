@@ -82,6 +82,12 @@ class CharacterDetailVC: UIViewController {
                 if let starships {
                     self.starships = starships
                     self.collectionView.reloadData()
+                    
+                    if let personDetail {
+                        Characters.addOrUpdateToDB(for: personDetail, planet: planet, starships: starships) { success in
+                            
+                        }
+                    }
                 }
             }
             .store(in: &cancellables)
@@ -111,6 +117,20 @@ extension CharacterDetailVC: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        Characters.fetchCharacters(using: nil) { [weak self] reuslt in
+            guard let self else { return }
+            
+            switch reuslt {
+            case .success(let characterInfo):
+                print(characterInfo.name)
+                print(characterInfo.starships?.count)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
     
 }
 
