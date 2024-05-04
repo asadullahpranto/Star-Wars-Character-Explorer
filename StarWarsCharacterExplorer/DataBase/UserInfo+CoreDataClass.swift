@@ -15,6 +15,7 @@ enum CoreDataError: Error {
     case fetchError
     case updateError
     case unknown
+    case loginError
 }
 
 @objc(UserInfo)
@@ -22,7 +23,7 @@ public class UserInfo: NSManagedObject {
     
     private static var container = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
-    class func addOrUpdateToDB(for userInfo: UserCredential, completion: @escaping (Bool) -> Void) {
+    class func addOrUpdateToDB(for userInfo: UserCredential, completion: @escaping (Result<Bool, CoreDataError>) -> Void) {
         guard let context = container?.newBackgroundContext() else { return }
         
         context.automaticallyMergesChangesFromParent = true
@@ -43,10 +44,10 @@ public class UserInfo: NSManagedObject {
                 }
                 
                 try context.save()
-                completion(true)
+                completion(.success(true))
             } catch {
                 print("DB ERROR: \(error.localizedDescription)")
-                completion(false)
+                completion(.failure(CoreDataError.updateError))
             }
         }
     }
@@ -65,7 +66,7 @@ public class UserInfo: NSManagedObject {
             do {
                 let results = try context.fetch(fetchRequest)
                 
-                if let userInfo = results.first {
+                if let userInfo = results.first(where: { $0.isLoggedIn }) {
                     completion(.success(userInfo))
                 } else {
                     completion(.failure(CoreDataError.unknown))
@@ -90,6 +91,7 @@ public class UserInfo: NSManagedObject {
                 
                 if let userInfo = results.first {
                     userInfo.isLoggedIn = isLoging
+                    
                     try context.save()
                     completion(.success(true))
                 } else {

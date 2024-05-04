@@ -7,9 +7,12 @@
 
 import UIKit
 import Combine
+import NVActivityIndicatorView
 
 class CharacterDetailVC: UIViewController {
     
+    @IBOutlet weak var indicatorHolderView: UIView!
+    @IBOutlet weak var indicatorView: NVActivityIndicatorView!
     @IBOutlet weak var starshipsLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var abbreviationNameHolder: UIView!
@@ -68,8 +71,24 @@ class CharacterDetailVC: UIViewController {
             
             starshipsLabel.text = "Starships(" + "\(personDetail.starships.count)" + ")"
             
+            // initial call
+            startIndicator()
             viewModel.getPlanetDetail(for: personDetail.homeworld)
             viewModel.getStarshipsDetail(for: personDetail.starships)
+        }
+    }
+    
+    private func startIndicator() {
+        DispatchQueue.main.async {
+            self.indicatorHolderView.isHidden = false
+            self.indicatorView.startAnimating()
+        }
+    }
+    
+    private func stopIndicator() {
+        DispatchQueue.main.async {
+            self.indicatorView.stopAnimating()
+            self.indicatorHolderView.isHidden = true
         }
     }
     
@@ -84,8 +103,13 @@ class CharacterDetailVC: UIViewController {
                     self.collectionView.reloadData()
                     
                     if let personDetail {
-                        Characters.addOrUpdateToDB(for: personDetail, planet: planet, starships: starships) { success in
-                            
+                        Characters.addOrUpdateToDB(for: personDetail, planet: planet, starships: starships) { isSuccess in
+                            self.stopIndicator()
+                            if isSuccess {
+                                
+                            } else {
+                                self.showAlert(with: "Error", and: "Can't save to the database")
+                            }
                         }
                     }
                 }
@@ -115,21 +139,6 @@ extension CharacterDetailVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardViewCell.className, for: indexPath) as! CardViewCell
         cell.configure(with: starships[indexPath.item])
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Characters.fetchCharacters(using: nil) { [weak self] reuslt in
-            guard let self else { return }
-            
-            switch reuslt {
-            case .success(let characterInfo):
-                print(characterInfo.name)
-                print(characterInfo.starships?.count)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
     }
     
 }

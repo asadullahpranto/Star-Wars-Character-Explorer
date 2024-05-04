@@ -14,6 +14,7 @@ class CharacterListViewModel {
     let firstPageUrl = "https://swapi.dev/api/people/?page=1"
     
     @Published var characterList: CharacterList?
+    @Published var charListFromDB = [Characters]()
     
     func getCharacterList(from url: String) {
         characterListService.getCharactersList(from: url)
@@ -33,5 +34,19 @@ class CharacterListViewModel {
             }
             .store(in: &cancellables)
         
+    }
+    
+    func getCharListFromDB() {
+        Characters.fetchCharacters { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case .success(let characterList):
+                self.charListFromDB = characterList
+                
+            case .failure(let error):
+                print("DB Error: ", error.localizedDescription)
+            }
+        }
     }
 }

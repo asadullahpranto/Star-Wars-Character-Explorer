@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class LoginViewController: UIViewController {
 
@@ -17,11 +18,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     
     let viewModel = LoginViewModel()
+    var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
+        setupPublisher()
     }
     
     private func setupViews() {
@@ -34,10 +37,8 @@ class LoginViewController: UIViewController {
         passwordField.configurePlaceHolder(with: .darkGray, placeHolder: "Password")
         passwordField.isSecureTextEntry = true
         passwordField.textContentType = .oneTimeCode
-        passwordField.addTarget(self, action: #selector(handlePasswordField), for: .editingChanged)
         
         emailField.configurePlaceHolder(with: .darkGray, placeHolder: "Email")
-        emailField.addTarget(self, action: #selector(handlePasswordField), for: .editingChanged)
         
         // login button
         loginButton.applyGradient(colours: [.orange, .red], startPoint: CGPoint(x: 0, y: 0.5), endPoint: CGPoint(x: 1, y: 0.5))
@@ -52,25 +53,40 @@ class LoginViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
-    
-    @objc private func handleEmailField() {
+    func setupPublisher() {
+        NotificationCenter.default
+            .publisher(for: UITextField.textDidChangeNotification, object: emailField)
+            .map { ($0.object as! UITextField).text ?? "" }
+            .assign(to: \.email, on: viewModel)
+            .store(in: &cancellables)
         
-    }
-    
-    @objc private func handlePasswordField() {
+        NotificationCenter.default
+            .publisher(for: UITextField.textDidChangeNotification, object: passwordField)
+            .map { ($0.object as! UITextField).text ?? "" }
+            .assign(to: \.password, on: viewModel)
+            .store(in: &cancellables)
         
+        viewModel.isSubmitEnabled
+            .map { $0 ? CGFloat(1.0) : CGFloat(0.5) }
+            .assign(to: \.alpha, on: loginButton)
+            .store(in: &cancellables)
     }
     
     @objc private func handleUserLogin() {
         guard let email = emailField.text else { return }
         
-        viewModel.login(with: email, and: "123") { [weak self] isValid in
+        viewModel.login() { [weak self] result in
             guard let self else { return }
             
-            DispatchQueue.main.async {
-                if isValid {
+            switch result {
+            case .success(let isSuccess):
+                print("login success")
+                DispatchQueue.main.async {
                     self.navigationController?.popViewController(animated: true)
                 }
+                
+            case .failure(let error):
+                print("login error: " + error.localizedDescription)
             }
         }
     }

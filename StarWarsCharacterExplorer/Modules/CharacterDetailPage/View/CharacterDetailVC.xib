@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,6 +27,8 @@
                 <outlet property="hairColorLabel" destination="7Cn-ls-h5z" id="yAp-ks-f0b"/>
                 <outlet property="heightLabel" destination="rV6-zc-SrJ" id="UvE-fe-aSG"/>
                 <outlet property="heightWeightStack" destination="ass-bu-Wea" id="uIh-3s-FDv"/>
+                <outlet property="indicatorHolderView" destination="83M-EP-g4Y" id="WTh-JL-f0U"/>
+                <outlet property="indicatorView" destination="FEZ-1H-ytx" id="Qhg-Vk-UIq"/>
                 <outlet property="massLabel" destination="S2M-cT-MHe" id="KVS-jk-KHp"/>
                 <outlet property="nameLabel" destination="a6N-9B-SSp" id="7RB-FX-ow3"/>
                 <outlet property="planetNameLabel" destination="9uD-Dd-51Q" id="pJX-qN-e7d"/>
@@ -194,15 +197,36 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83M-EP-g4Y">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEZ-1H-ytx" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                            <rect key="frame" x="166.66666666666666" y="396" width="60" height="60"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="Cc4-as-0iq"/>
+                                <constraint firstAttribute="width" secondItem="FEZ-1H-ytx" secondAttribute="height" id="xmA-K7-BzQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="FEZ-1H-ytx" firstAttribute="centerY" secondItem="83M-EP-g4Y" secondAttribute="centerY" id="gLg-RP-hWA"/>
+                        <constraint firstItem="FEZ-1H-ytx" firstAttribute="centerX" secondItem="83M-EP-g4Y" secondAttribute="centerX" id="nJU-n7-beW"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.082352941176470587" green="0.078431372549019607" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="9uD-Dd-51Q" firstAttribute="leading" secondItem="k5g-NS-Ktl" secondAttribute="leading" id="Aw1-OA-lxr"/>
+                <constraint firstItem="83M-EP-g4Y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BrU-QG-FzJ"/>
                 <constraint firstItem="k5g-NS-Ktl" firstAttribute="top" secondItem="slB-uZ-f9G" secondAttribute="bottom" constant="16" id="Cgv-Gv-w11"/>
                 <constraint firstItem="k5g-NS-Ktl" firstAttribute="leading" secondItem="waP-br-8GA" secondAttribute="leading" id="GHe-OC-SGM"/>
                 <constraint firstItem="slB-uZ-f9G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="JqM-pT-ogC"/>
                 <constraint firstItem="Gbt-rZ-Pzq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KPu-Nc-yDu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="83M-EP-g4Y" secondAttribute="trailing" id="L4p-ph-ASP"/>
+                <constraint firstItem="83M-EP-g4Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LX1-df-Rnd"/>
                 <constraint firstItem="nJH-vm-Has" firstAttribute="top" secondItem="SXK-Bi-4Pd" secondAttribute="bottom" constant="8" symbolic="YES" id="RUk-yb-R7g"/>
                 <constraint firstItem="1Y3-gX-eOO" firstAttribute="centerY" secondItem="9uD-Dd-51Q" secondAttribute="centerY" id="T9Y-a5-CT5"/>
                 <constraint firstItem="nJH-vm-Has" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VMv-1V-s2z"/>
@@ -211,6 +235,7 @@
                 <constraint firstAttribute="trailing" secondItem="xOL-9Y-f91" secondAttribute="trailing" constant="24" id="gUT-mG-XhG"/>
                 <constraint firstItem="SXK-Bi-4Pd" firstAttribute="leading" secondItem="waP-br-8GA" secondAttribute="leading" id="hcq-TT-cV7"/>
                 <constraint firstItem="9uD-Dd-51Q" firstAttribute="top" secondItem="k5g-NS-Ktl" secondAttribute="bottom" constant="8" symbolic="YES" id="i8K-1o-ooL"/>
+                <constraint firstAttribute="bottom" secondItem="83M-EP-g4Y" secondAttribute="bottom" id="kIe-jE-ilM"/>
                 <constraint firstItem="xOL-9Y-f91" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="le0-3V-YV2"/>
                 <constraint firstItem="Gbt-rZ-Pzq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="mDH-mr-07S"/>
                 <constraint firstItem="Gbt-rZ-Pzq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pqe-5k-6d0"/>
@@ -222,4 +247,9 @@
             <point key="canvasLocation" x="-578" y="-75"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

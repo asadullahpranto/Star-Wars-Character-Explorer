@@ -36,6 +36,8 @@ class HomeViewController: UIViewController {
             self.applySnapshot(with: characterList, isAnimated: false)
         }
     }
+    
+    private var dbCharacterList = [Characters]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +73,8 @@ class HomeViewController: UIViewController {
     private func bindViewModelToView() {
         viewModel.$characterList
             .receive(on: DispatchQueue.main)
-            .sink { value in
+            .sink { [weak self] value in
+                guard let self else { return }
                 if let value = value {
                     self.tableView.hideLoadingFooter()
                     self.isNetworkCallOngoing = false
@@ -80,15 +83,26 @@ class HomeViewController: UIViewController {
                 }
             }
             .store(in: &cancellable)
+        viewModel.$charListFromDB
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] charList in
+                self?.dbCharacterList = charList
+            }
+            .store(in: &cancellable)
     }
     
     private func loadCharacterList(for url: String) {
-        if !isNetworkCallOngoing {
-            tableView.showLoadingFooter()
-            isNetworkCallOngoing = true
-            
-            viewModel.getCharacterList(from: url)
+        if Reachability.isConnectedToNetwork() {
+            if !isNetworkCallOngoing {
+                tableView.showLoadingFooter()
+                isNetworkCallOngoing = true
+                
+                viewModel.getCharacterList(from: url)
+            }
+        } else {
+            viewModel.getCharListFromDB()
         }
+        
     }
     
     @objc private func didTapMenuButton() {
@@ -104,8 +118,6 @@ extension HomeViewController {
             tableView: tableView,
             cellProvider: { (tableView, indexPath, item) ->
                 UITableViewCell? in
-                
-                let cellID = UUID()
                 
                 let cell = tableView.dequeueReusableCell(
                     withIdentifier: CharacterListCell.reuseID,
@@ -135,7 +147,8 @@ extension HomeViewController: UITableViewDelegate {
         let lastRow = tableView.numberOfRows(inSection: lastSection) - 1
         
         if indexPath.section == lastSection && indexPath.row == lastRow {
-            if let nextPage {
+            
+            if let nextPage, Reachability.isConnectedToNetwork() {
                 tableView.showLoadingFooter()
                 loadCharacterList(for: nextPage)
             }
@@ -161,7 +174,6 @@ extension HomeViewController: UITableViewDelegate {
         let detailVC = CharacterDetailVC()
         detailVC.personDetail = characterList[indexPath.row]
         navigationController?.pushViewController(detailVC, animated: true)
-        
     }
     
 }
