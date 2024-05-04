@@ -1,3 +1,3 @@
-1. glone this repo: https://github.com/asadullahpranto/Star-Wars-Character-Explorer.git
-2. git checkout feature/dataCachingToCoreData
+1. glone this repo: git clone https://github.com/asadullahpranto/Star-Wars-Character-Explorer.git
+2. switch branch: git checkout feature/dataCachingToCoreData
 3. run 
