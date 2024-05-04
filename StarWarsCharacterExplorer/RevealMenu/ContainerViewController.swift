@@ -31,6 +31,7 @@ class ContainerViewController: UIViewController {
         addChild(menuVC)
         view.addSubview(menuVC.view)
         menuVC.didMove(toParent: self)
+        menuVC.delegate = self
         
         homeVC.delegate = self
         let navVC = UINavigationController(rootViewController: homeVC)
@@ -50,13 +51,17 @@ class ContainerViewController: UIViewController {
         homeVC.view.addSubview(coverView)
         
     }
-    
-    private func hideUnhideCoverView() {
-        
-    }
 }
 
-extension ContainerViewController: HomeViewControllerDelegate {
+extension ContainerViewController: SlideMenuDelegate, LoginLogoutDelegate {
+    func didLoginLogoutTapped(email: String, isLogingOut: Bool) {
+        let vc = LoginViewController()
+        navVC?.pushViewController(vc, animated: false)
+        didTapMenuButton()
+        
+        UserInfo.loginLogout(using: email, isLoging: !isLogingOut) {_ in }
+    }
+    
     @objc func didTapMenuButton() {
         switch menuState {
         case .opened:
@@ -74,6 +79,7 @@ extension ContainerViewController: HomeViewControllerDelegate {
                 self.coverView.alpha = 0
                 self.coverView.isHidden = true
                 self.homeVC.searchBarVC.searchBar.isUserInteractionEnabled = true
+               
                 
             } completion: { [weak self] isComplete in
                 guard let self else {

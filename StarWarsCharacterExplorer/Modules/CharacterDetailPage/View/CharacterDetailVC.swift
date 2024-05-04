@@ -7,9 +7,12 @@
 
 import UIKit
 import Combine
+import NVActivityIndicatorView
 
 class CharacterDetailVC: UIViewController {
     
+    @IBOutlet weak var indicatorHolderView: UIView!
+    @IBOutlet weak var indicatorView: NVActivityIndicatorView!
     @IBOutlet weak var starshipsLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var abbreviationNameHolder: UIView!
@@ -68,8 +71,24 @@ class CharacterDetailVC: UIViewController {
             
             starshipsLabel.text = "Starships(" + "\(personDetail.starships.count)" + ")"
             
+            // initial call
+            startIndicator()
             viewModel.getPlanetDetail(for: personDetail.homeworld)
             viewModel.getStarshipsDetail(for: personDetail.starships)
+        }
+    }
+    
+    private func startIndicator() {
+        DispatchQueue.main.async {
+            self.indicatorHolderView.isHidden = false
+            self.indicatorView.startAnimating()
+        }
+    }
+    
+    private func stopIndicator() {
+        DispatchQueue.main.async {
+            self.indicatorView.stopAnimating()
+            self.indicatorHolderView.isHidden = true
         }
     }
     
@@ -82,6 +101,17 @@ class CharacterDetailVC: UIViewController {
                 if let starships {
                     self.starships = starships
                     self.collectionView.reloadData()
+                    
+                    if let personDetail {
+                        Characters.addOrUpdateToDB(for: personDetail, planet: planet, starships: starships) { isSuccess in
+                            self.stopIndicator()
+                            if isSuccess {
+                                
+                            } else {
+                                self.showAlert(with: "Error", and: "Can't save to the database")
+                            }
+                        }
+                    }
                 }
             }
             .store(in: &cancellables)
@@ -110,7 +140,6 @@ extension CharacterDetailVC: UICollectionViewDataSource {
         cell.configure(with: starships[indexPath.item])
         return cell
     }
-    
     
 }
 
