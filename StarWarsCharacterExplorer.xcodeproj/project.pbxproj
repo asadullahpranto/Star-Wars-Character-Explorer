@@ -203,17 +203,12 @@
 		2D4BFD3B2BD946AD007AFDB9 /* StarWarsCharacterExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				2DD169BD2BDFE47A0091D8EA /* Fonts */,
+				51DDBF142DE61D3800891FC8 /* AppController */,
+				51DDBF152DE61D5100891FC8 /* SupportingFiles */,
 				2D82A54C2BDEA6C300807989 /* Extensions */,
 				2D4BFD8D2BD96756007AFDB9 /* DataBase */,
 				2D4BFD7D2BD94AFD007AFDB9 /* NetworkLayer */,
-				3AA2B63F2BE4010C00D4957C /* RevealMenu */,
 				2D4BFD8E2BD9678D007AFDB9 /* Modules */,
-				2D4BFD3C2BD946AD007AFDB9 /* AppDelegate.swift */,
-				2D4BFD3E2BD946AD007AFDB9 /* SceneDelegate.swift */,
-				2D4BFD482BD946AF007AFDB9 /* Assets.xcassets */,
-				2D4BFD4A2BD946AF007AFDB9 /* LaunchScreen.storyboard */,
-				2D4BFD4D2BD946AF007AFDB9 /* Info.plist */,
 			);
 			path = StarWarsCharacterExplorer;
 			sourceTree = "<group>";
@@ -275,6 +270,7 @@
 		2D4BFD8E2BD9678D007AFDB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3AA2B63F2BE4010C00D4957C /* RevealMenu */,
 				2D4BFD912BD967DA007AFDB9 /* RegisterPage */,
 				2D4BFD922BD967E6007AFDB9 /* LoginPage */,
 				2D4BFD8F2BD967AC007AFDB9 /* HomePage */,
@@ -503,6 +499,26 @@
 				2D4BFD402BD946AD007AFDB9 /* ContainerViewController.swift */,
 			);
 			path = RevealMenu;
+			sourceTree = "<group>";
+		};
+		51DDBF142DE61D3800891FC8 /* AppController */ = {
+			isa = PBXGroup;
+			children = (
+				2D4BFD3C2BD946AD007AFDB9 /* AppDelegate.swift */,
+				2D4BFD3E2BD946AD007AFDB9 /* SceneDelegate.swift */,
+			);
+			path = AppController;
+			sourceTree = "<group>";
+		};
+		51DDBF152DE61D5100891FC8 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2DD169BD2BDFE47A0091D8EA /* Fonts */,
+				2D4BFD482BD946AF007AFDB9 /* Assets.xcassets */,
+				2D4BFD4A2BD946AF007AFDB9 /* LaunchScreen.storyboard */,
+				2D4BFD4D2BD946AF007AFDB9 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -872,7 +888,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 239VXZ5UK5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StarWarsCharacterExplorer/Info.plist;
+				INFOPLIST_FILE = StarWarsCharacterExplorer/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -901,7 +917,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 239VXZ5UK5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StarWarsCharacterExplorer/Info.plist;
+				INFOPLIST_FILE = StarWarsCharacterExplorer/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

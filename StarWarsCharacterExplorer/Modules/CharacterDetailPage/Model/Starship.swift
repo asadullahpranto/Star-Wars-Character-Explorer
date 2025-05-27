@@ -7,28 +7,32 @@
 
 import Foundation
 
-struct Starship: Hashable, Codable {
-    let name: String
-    let model: String
-    let manufacturer: String
-    let maxAtmospheringSpeed: String
+struct StarshipsResponse: Codable {
+    let count: Int
+    let pages: Int
+    let next: String?
+    let previous: String?
+    let results: [StarshipWrapper]
+}
+
+struct StarshipWrapper: Codable {
+    let fields: Starship
+}
+
+struct Starship: Codable {
+    let pilots: [String]
+    let MGLT: String
     let starshipClass: String
-    
+    let hyperdriveRating: String
+    let films: [String]
+    let url: String
+
     enum CodingKeys: String, CodingKey {
-        case name
-        case model
-        case manufacturer
-        case maxAtmospheringSpeed = "max_atmosphering_speed"
+        case pilots, MGLT, films, url
         case starshipClass = "starship_class"
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        hasher.combine(model)
-        hasher.combine(manufacturer)
-        hasher.combine(maxAtmospheringSpeed)
-        hasher.combine(starshipClass)
+        case hyperdriveRating = "hyperdrive_rating"
     }
 }
+
 
 

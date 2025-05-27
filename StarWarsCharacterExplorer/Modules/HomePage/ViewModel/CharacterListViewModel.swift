@@ -11,9 +11,9 @@ import Combine
 class CharacterListViewModel {
     let characterListService = CharacterListService()
     var cancellables = Set<AnyCancellable>()
-    let firstPageUrl = "https://swapi.dev/api/people/?page=1"
+    let firstPageUrl = "https://swapi-node.now.sh/api/people/?page=1"
     
-    @Published var characterList: CharacterList?
+    @Published var characterList: PeopleResponse?
     @Published var charListFromDB = [Characters]()
     
     func getCharacterList(from url: String) {

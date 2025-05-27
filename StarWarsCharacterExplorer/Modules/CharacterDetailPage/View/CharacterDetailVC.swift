@@ -32,10 +32,11 @@ class CharacterDetailVC: UIViewController {
     @IBOutlet weak var populationLabel: UILabel!
     @IBOutlet weak var planetNameLabel: UILabel!
     private var cancellables = Set<AnyCancellable>()
-    var personDetail: CharacterInfo?
+    var personDetail: Person?
     private let viewModel = CharacterDetailViewModel()
     private var starships = [Starship]()
     private var planet: Planet?
+    private let baseUrl = "https://swapi-node.now.sh"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +74,7 @@ class CharacterDetailVC: UIViewController {
             
             // initial call
             startIndicator()
-            viewModel.getPlanetDetail(for: personDetail.homeworld)
+            viewModel.getPlanetDetail(for: baseUrl + personDetail.homeworld)
             viewModel.getStarshipsDetail(for: personDetail.starships)
         }
     }
@@ -95,6 +96,7 @@ class CharacterDetailVC: UIViewController {
     private func bindViewModel() {
         // Subscribe to the publisher
         viewModel.$allStarship
+            .receive(on: RunLoop.main)
             .sink { [weak self] starships in
                 guard let self else { return }
                 

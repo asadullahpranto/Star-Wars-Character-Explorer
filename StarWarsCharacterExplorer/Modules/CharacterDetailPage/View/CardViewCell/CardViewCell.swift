@@ -21,8 +21,8 @@ class CardViewCell: UICollectionViewCell {
     }
     
     func configure(with starship: Starship) {
-        nameLabel.text = starship.name
-        modelLabel.text = "Model: " + starship.model
+        nameLabel.text = starship.starshipClass
+        modelLabel.text = "Model: " + starship.MGLT
     }
 
 }

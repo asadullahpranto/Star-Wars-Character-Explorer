@@ -14,6 +14,7 @@ class CharacterDetailViewModel {
     
     @Published var allStarship: [Starship]?
     @Published var planet: Planet?
+    private let baseUrl = "https://swapi-node.now.sh"
     
     private var starships = [Starship]()
     
@@ -33,7 +34,7 @@ class CharacterDetailViewModel {
             } receiveValue: { [weak self] planet in
                 guard let self else { return }
                 
-                self.planet = planet
+                self.planet = planet.fields
             }
             .store(in: &cancellables)
     }
@@ -43,7 +44,7 @@ class CharacterDetailViewModel {
         
         for url in urls {
             group.enter()
-            charDetailService.getStarshipDetails(by: url)
+            charDetailService.getStarshipDetails(by: baseUrl + url)
                 .sink { [weak self] completion in
                     guard let self else { return }
 
@@ -59,7 +60,7 @@ class CharacterDetailViewModel {
                 } receiveValue: { [weak self] starship in
                     guard let self else { return }
                     
-                    self.starships.append(starship)
+                    self.starships.append(starship.fields)
                 }
                 .store(in: &cancellables)
         }

@@ -14,8 +14,8 @@ class HomeViewController: UIViewController {
         case main
     }
     
-    typealias DataSource = UITableViewDiffableDataSource<Section, CharacterInfo>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, CharacterInfo>
+    typealias DataSource = UITableViewDiffableDataSource<Section, Person>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Person>
     
     @IBOutlet weak var tableView: UITableView!
     private var spinnerFooterView: UIView?
@@ -26,12 +26,13 @@ class HomeViewController: UIViewController {
     
     var cancellable = Set<AnyCancellable>()
     
+    private let baseUrl = "https://swapi-node.now.sh"
     private var nextPage: String?
     private var isNetworkCallOngoing = false
     
     weak var delegate: SlideMenuDelegate?
     
-    private var characterList = [CharacterInfo]() {
+    private var characterList = [PersonWrapper]() {
         didSet {
             self.applySnapshot(with: characterList, isAnimated: false)
         }
@@ -78,8 +79,8 @@ class HomeViewController: UIViewController {
                 if let value = value {
                     self.tableView.hideLoadingFooter()
                     self.isNetworkCallOngoing = false
-                    self.nextPage = value.nextPage
-                    self.characterList.append(contentsOf: value.list)
+                    self.nextPage = value.next
+                    self.characterList.append(contentsOf: value.results)
                 }
             }
             .store(in: &cancellable)
@@ -129,10 +130,11 @@ extension HomeViewController {
         return dataSource
     }
     
-    func applySnapshot(with characterList: [CharacterInfo], isAnimated: Bool = true) {
+    func applySnapshot(with characterList: [PersonWrapper], isAnimated: Bool = true) {
+        
         var snapshot = Snapshot()
         snapshot.appendSections([.main])
-        snapshot.appendItems(characterList)
+        snapshot.appendItems(characterList.map({ $0.fields }))
         
         dataSource.apply(snapshot, animatingDifferences: isAnimated)
     }
@@ -150,7 +152,7 @@ extension HomeViewController: UITableViewDelegate {
             
             if let nextPage, Reachability.isConnectedToNetwork() {
                 tableView.showLoadingFooter()
-                loadCharacterList(for: nextPage)
+                loadCharacterList(for: baseUrl+nextPage)
             }
         }
     }
@@ -172,7 +174,7 @@ extension HomeViewController: UITableViewDelegate {
         title = "People"
 //        let vc = RegisterViewController()
         let detailVC = CharacterDetailVC()
-        detailVC.personDetail = characterList[indexPath.row]
+        detailVC.personDetail = characterList[indexPath.row].fields
         navigationController?.pushViewController(detailVC, animated: true)
     }
     

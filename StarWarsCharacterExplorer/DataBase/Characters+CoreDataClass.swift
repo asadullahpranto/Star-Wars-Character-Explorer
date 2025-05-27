@@ -14,7 +14,7 @@ public class Characters: NSManagedObject {
     
     private static var container = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
-    class func addOrUpdateToDB(for charInfo: CharacterInfo, planet: Planet?, starships: [Starship], completion: @escaping (Bool) -> Void) {
+    class func addOrUpdateToDB(for charInfo: Person, planet: Planet?, starships: [Starship], completion: @escaping (Bool) -> Void) {
         guard let context = container?.newBackgroundContext() else { return }
         
         context.automaticallyMergesChangesFromParent = true
@@ -46,8 +46,8 @@ public class Characters: NSManagedObject {
                 
                 for a in starships {
                     let ship = Starships(context: context)
-                    ship.name = a.name
-                    ship.model = a.model
+                    ship.name = a.starshipClass
+                    ship.model = a.MGLT
                     charObj.addToStarships(ship)
                 }
                 
@@ -74,7 +74,7 @@ public class Characters: NSManagedObject {
             let fetchRequest: NSFetchRequest<Characters> = Characters.fetchRequest()
 
             do {
-                var characters = [CharacterInfo]()
+                var characters = [Person]()
                 let results = try context.fetch(fetchRequest)
                 
                 completion(.success(results))
